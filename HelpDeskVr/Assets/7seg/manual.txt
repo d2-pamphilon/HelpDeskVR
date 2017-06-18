@@ -1,0 +1,22 @@
+7-Segment Display Package
+
+With this package you can create a variety of 7-segment displays, using the pre made prefabs or
+creating custom displays. The display appearance can be chosen editing the "onColor" and "offColor" in the scripts.
+Its possible to show numbers and text, in a 7-segment style. Open the "scene01" in test folder, to see some examples.
+
+Clocks
+
+This package include 2 digital clocks in Prefabs folder: Clock6Digits and Clock4Digits.
+If you drag then directly in your project they will show the current system time. To show a custom time
+remove the component "SetCurrentTimeXDigits". You can change the "text" string in "ClockXDigits" script to
+show the desired time. The string must fill the whole display, considering the colon space. For example,
+in the 4 digits clock valid strings are: "14:35" and "14 35";
+
+Numeric Displays
+
+You can create any lenght numeric displays combining some "Display7Seg" prefabs in a game object and adding the
+script "ContainerDisplay7Seg" as component. You can use the prefabs "Display2Digits" and "Display4Digits" as
+reference, or use them directly in your project. To change the text displayed you need set the string "text" in
+the container script. Its recommended fill the whole display with characters. You can put dots in any place of the
+string when desired, the script will correctly show them. For example, in "Display2Digits" prefab, valid strings can
+be: "12", "1.2", "1.2.".
