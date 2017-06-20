@@ -12,32 +12,78 @@ public struct LaptopDimension
 public class GameManager : MonoBehaviour {
 
     [SerializeField]
+    GameObject mainDimension;
+    [SerializeField]
+    Camera mainCamera;
+    [SerializeField]
+    GameObject cameraRig;
+    [SerializeField]
     Transform laptopSpawnPoint;
-
     [SerializeField]
     Transform dimensionSpawnPoint;
-
     [SerializeField]
     public LaptopDimension[] laptopsPrefabs;
 
     protected Dictionary<GameObject, GameObject> createdDimensions;
 
+    float timer;
+
 	// Use this for initialization
 	void Start () {
-		
+        createdDimensions = new Dictionary<GameObject, GameObject>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SpawnLaptop(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SpawnLaptop(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SpawnLaptop(2);
+        }
+    }
 
     public void SpawnLaptop(int index)
     {
         GameObject laptop = Instantiate(laptopsPrefabs[index].Laptop);
         GameObject dim = Instantiate(laptopsPrefabs[index].Dimension);
-        //Link Laptop postal to dimension;
-        //??? Link dimension portal to laptop ???
+        laptop.transform.position = laptopSpawnPoint.transform.position;
+        dim.transform.position = dimensionSpawnPoint.transform.position;
+        //Link Laptop portal to dimension;
+        LaptopPortal portal = laptop.GetComponentInChildren<LaptopPortal>();
+        portal.dimension1 = mainDimension.GetComponent<Dimension>();
+        portal.dimension2 = dim.GetComponent<Dimension>();
+        portal.mainCamera = mainCamera;
+
+        laptop.transform.parent = mainDimension.transform;
+        portal.dimensionChanging.Add(cameraRig);
+        portal.dimensionChanging.Add(laptop);
+
+
+        Light[] lights = FindObjectsOfType<Light>();
+        foreach (Light l in lights)
+        {
+            l.enabled = l.gameObject.layer == cameraRig.layer;
+        }
+
+        AudioSource[] sounds = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource s in sounds)
+        {
+            s.enabled = s.gameObject.layer == cameraRig.layer;
+        }
+
+        ParticleSystem[] particle = FindObjectsOfType<ParticleSystem>();
+        foreach (ParticleSystem p in particle)
+        {
+            p.enableEmission = p.gameObject.layer == cameraRig.layer;
+        }
+
         createdDimensions.Add(laptop, dim);
     }
 

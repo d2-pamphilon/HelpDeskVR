@@ -9,9 +9,19 @@ using UnityEngine;
 public static class DimensionChanger {
 	public static void SwitchDimensions(GameObject obj, Dimension fromDimension, Dimension toDimension) {
 		obj.layer = toDimension.layer;
+        if (obj.transform.parent.gameObject.GetComponent<Dimension>() == fromDimension)
+        {
+            obj.transform.parent = toDimension.gameObject.transform;
+            SetLayerRecursively(obj.gameObject,  toDimension.layer);
+        }
+        else if (obj.transform.parent.gameObject.GetComponent<Dimension>() == toDimension)
+        {
+            obj.transform.parent = fromDimension.gameObject.transform;
+            SetLayerRecursively(obj.gameObject, fromDimension.layer);
+        }
 
-		// If this is an FPS controller then make sure it goes through too.
-		Transform parent = obj.transform.parent;
+        // If this is an FPS controller then make sure it goes through too.
+        Transform parent = obj.transform.parent;
 		if(parent != null && parent.GetComponent<CharacterController>()) {
 			parent.gameObject.layer = toDimension.layer;
 		}
@@ -26,4 +36,15 @@ public static class DimensionChanger {
 			}
 		}
 	}
+
+    static void SetLayerRecursively(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
+        }
+    }
+
 }

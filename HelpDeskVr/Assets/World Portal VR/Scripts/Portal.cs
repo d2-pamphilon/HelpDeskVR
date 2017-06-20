@@ -323,7 +323,7 @@ public class Portal : MonoBehaviour
 		isDeforming = true;
 	}
 
-	private void SwitchDimensions ()
+	protected virtual void SwitchDimensions ()
 	{
         DimensionChanger.SwitchCameraRender (mainCamera, FromDimension ().layer, ToDimension ().layer, ToDimension ().customSkybox);
         DimensionChanger.SwitchDimensions (mainCamera.gameObject, FromDimension (), ToDimension ());

@@ -5,6 +5,7 @@ using System.Text;
 
 public class LaunchCodeInput : MonoBehaviour {
 
+    [SerializeField]
     ContainerDisplay7Seg display;
     int cursorPos;
 
