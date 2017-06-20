@@ -10,8 +10,6 @@ public class Laptop : VRTK_InteractableObject
     bool open;
     bool firstTimeGrab;
 
-    public Virus.ComputerVirus_Base virusScript;
-
     public override void Grabbed(GameObject currentGrabbingObject)
     {
         base.Grabbed(currentGrabbingObject);
@@ -67,7 +65,6 @@ public class Laptop : VRTK_InteractableObject
             monitor.transform.Rotate(new Vector3(0, 0, 1));
             yield return new WaitForSeconds(0.01f);
         }
-        virusScript.VirusActivate();
         yield return null;
     }
 
@@ -79,7 +76,6 @@ public class Laptop : VRTK_InteractableObject
             monitor.transform.Rotate(new Vector3(0, 0, -1));
             yield return new WaitForSeconds(0.01f);
         }
-        virusScript.VirusDisable();
         yield return null;
     }
 }
