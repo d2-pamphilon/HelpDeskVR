@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114901539026244054}
   m_Layer: 0
   m_Name: USB
-  m_TagString: Untagged
+  m_TagString: USB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,8 +345,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.1250167, y: 0.6058051, z: 1.5207372}
-  m_Center: {x: -0.21285261, y: -0.0085532665, z: -0.0000029802316}
+  m_Size: {x: 3.9046853, y: 0.6058051, z: 1.5207372}
+  m_Center: {x: -0.8230178, y: -0.0085532665, z: -0.0000029802316}
 --- !u!114 &114240546276167076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,7 +361,7 @@ MonoBehaviour:
   disableWhenIdle: 1
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   allowedTouchControllers: 0
-  isGrabbable: 0
+  isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1

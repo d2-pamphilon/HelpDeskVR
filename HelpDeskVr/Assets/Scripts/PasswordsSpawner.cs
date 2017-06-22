@@ -24,6 +24,9 @@ public class PasswordsSpawner : MonoBehaviour {
     [SerializeField]
     int maxTextSize;
 
+    [SerializeField]
+    int lastPassword;
+
     int counter = 0;
 
     // Use this for initialization
@@ -40,7 +43,7 @@ public class PasswordsSpawner : MonoBehaviour {
         {
             counter++;
             timePassed = 0.0f;
-            int index = Random.Range(0, 9999);
+            int index = Random.Range(0, lastPassword);
             if (timeBetweenPasswords > 1)
             {
                 timeBetweenPasswords -= timeBetweenPasswords / 100;

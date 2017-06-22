@@ -6,6 +6,10 @@ using VRTK;
 public class Laptop : VRTK_InteractableObject
 {
 
+    [SerializeField]
+    public VRTK_SnapDropZone USB_DropZone;
+
+    public GameObject currentUSB;
     GameObject monitor;
     bool open;
     bool firstTimeGrab;
@@ -50,7 +54,19 @@ public class Laptop : VRTK_InteractableObject
         firstTimeGrab = true;
         open = false;
         monitor = transform.FindChild("laptop_monitor").gameObject;
-	}
+        USB_DropZone.ObjectSnappedToDropZone += USB_DropZone_ObjectSnappedToDropZone;
+        USB_DropZone.ObjectUnsnappedFromDropZone += USB_DropZone_ObjectUnsnappedFromDropZone;
+    }
+
+    private void USB_DropZone_ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
+    {
+        currentUSB = e.snappedObject;
+    }
+
+    private void USB_DropZone_ObjectUnsnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
+    {
+        currentUSB = null;
+    }
 
     protected override void Update()
     {
