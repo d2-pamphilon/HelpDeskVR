@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114240546276167076}
   - component: {fileID: 114546711246598690}
   - component: {fileID: 114901539026244054}
+  - component: {fileID: 114427802795783882}
   m_Layer: 0
   m_Name: USB
   m_TagString: USB
@@ -376,6 +377,19 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114427802795783882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024863224427052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b412243d4d0e734b85b49f4b8889caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  program: 0
+  isBad: 0
 --- !u!114 &114546711246598690
 MonoBehaviour:
   m_ObjectHideFlags: 1
