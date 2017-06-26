@@ -8,6 +8,11 @@ public class VrCartoonHandanimation : MonoBehaviour
     private Animator m_animation;
     public VRTK.VRTK_ControllerEvents m_handEvent;
 
+    public List<VrHandCollision> m_handCollision;
+
+    public VrHandWatch m_watch;
+    //public VrHandCollision m_handCollision;
+
 
     //int Natural = Animator.StringToHash("Natural");
     //int GrabSmall = Animator.StringToHash("GrabSmall");
@@ -61,14 +66,16 @@ public class VrCartoonHandanimation : MonoBehaviour
         None
     }
 
-   // public HandAnim m_Natural;
-   // public HandAnim m_TriggerPress;
-   // public HandAnim m_GripPress;
+    // public HandAnim m_Natural;
+    // public HandAnim m_TriggerPress;
+    // public HandAnim m_GripPress;
 
     private void Start()
     {
         m_animation = GetComponent<Animator>();
         m_animation.SetTrigger("Natural");
+
+        //m_handCollision = new List<VrHandCollision>();
 
         if (m_handEvent == null)
         {
@@ -81,6 +88,7 @@ public class VrCartoonHandanimation : MonoBehaviour
             print("found hands");
         }
 
+        m_watch = gameObject.GetComponentInChildren<VrHandWatch>();
 
         m_handEvent.TriggerPressed += new VRTK.ControllerInteractionEventHandler(DoTriggerPressed);
         m_handEvent.TriggerReleased += new VRTK.ControllerInteractionEventHandler(DoTriggerReleased);
@@ -88,8 +96,20 @@ public class VrCartoonHandanimation : MonoBehaviour
         m_handEvent.GripPressed += new VRTK.ControllerInteractionEventHandler(DoGripPressed);
         m_handEvent.GripReleased += new VRTK.ControllerInteractionEventHandler(DoGripReleased);
 
+        m_handEvent.TouchpadPressed += new VRTK.ControllerInteractionEventHandler(DoTouchPadPressed);
+        m_handEvent.TouchpadReleased += new VRTK.ControllerInteractionEventHandler(DoTouchPadReleased);
+
+
+        VrHandCollision[] m_GO = gameObject.GetComponentsInChildren<VrHandCollision>();
+        for (int i = 0; i < m_GO.Length; i++)
+        {
+            m_handCollision.Add(m_GO[i]);
+            m_handCollision[i].SetBool(true);
+            
+        }
+
     }
-    
+
 
     private void DebugLogger(uint index, string button, string action, VRTK.ControllerInteractionEventArgs e)
     {
@@ -101,26 +121,48 @@ public class VrCartoonHandanimation : MonoBehaviour
     {
         print("GrabSmall!");
         m_animation.SetTrigger(GrabLarge);
+        //Turn off finger collision
+
     }
 
     private void DoTriggerReleased(object sender, VRTK.ControllerInteractionEventArgs e)
     {
         print("Natural");
         m_animation.SetTrigger(Natural);
+
     }
 
     private void DoGripPressed(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        print("Rock");
-        m_animation.SetTrigger(Rock);
+        print("Point");
+        m_animation.SetTrigger(Point);
+        //turn on finger collision
+        for (int i = 0; i < m_handCollision.Count; i++)
+        {
+            m_handCollision[i].IsActive(true);
+        }
     }
 
     private void DoGripReleased(object sender, VRTK.ControllerInteractionEventArgs e)
     {
         print("Natural");
         m_animation.SetTrigger(Natural);
+        for (int i = 0; i < m_handCollision.Count; i++)
+        {
+            m_handCollision[i].IsActive(false);
+        }
     }
 
+    private void DoTouchPadPressed(object sender, VRTK.ControllerInteractionEventArgs e)
+    {
+        if (m_watch != null)
+            m_watch.SetWatchActive(true);
+    }
+    private void DoTouchPadReleased(object sender, VRTK.ControllerInteractionEventArgs e)
+    {
+        if (m_watch != null)
+            m_watch.SetWatchActive(false);
+    }
 
 
 
