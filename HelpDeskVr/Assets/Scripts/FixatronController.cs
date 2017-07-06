@@ -31,15 +31,18 @@ public class FixatronController : MonoBehaviour {
     }
 
     [SerializeField]
-    VRTK_SnapDropZone USB_DropZone;
+    GameObject[] Lights;
 
+    [SerializeField]
+    VRTK_SnapDropZone USB_DropZone;
+         
     [SerializeField]
     GameObject currentUSB;
-
+         
     [SerializeField]
     float timeToDownload;
-
-    [SerializeField]
+     
+    [ SerializeField]
     float timeToInstall;
 
     [SerializeField]
