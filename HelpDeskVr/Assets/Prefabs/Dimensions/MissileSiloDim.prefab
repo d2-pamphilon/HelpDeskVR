@@ -3339,6 +3339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4451134199605418}
   - component: {fileID: 114690716720700086}
+  - component: {fileID: 114674358536338086}
   m_Layer: 0
   m_Name: MissileSiloDim
   m_TagString: Untagged
@@ -21257,6 +21258,19 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
+--- !u!114 &114674358536338086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576983828602768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c935380b060a4ba09bf84a1162606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 120
+  timeOver: 0
 --- !u!114 &114684285945721976
 MonoBehaviour:
   m_ObjectHideFlags: 1

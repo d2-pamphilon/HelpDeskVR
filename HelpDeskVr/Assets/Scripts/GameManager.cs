@@ -26,15 +26,25 @@ public class GameManager : MonoBehaviour {
 
     protected Dictionary<GameObject, GameObject> createdDimensions;
 
-    float timer;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         createdDimensions = new Dictionary<GameObject, GameObject>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        foreach (KeyValuePair<GameObject, GameObject> entry in createdDimensions)
+        {
+            if (entry.Value.GetComponent<DimensionTimer>().timeOver)
+            {
+                DestroyLaptop(entry.Key);
+            }
+        }
+
+
+
+        //Laptop spawning codes
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SpawnLaptop(0);
@@ -60,6 +70,8 @@ public class GameManager : MonoBehaviour {
         portal.dimension1 = mainDimension.GetComponent<Dimension>();
         portal.dimension2 = dim.GetComponent<Dimension>();
         portal.mainCamera = mainCamera;
+        laptop.GetComponent<Laptop>().connectedDimension = dim;
+        laptop.GetComponent<Laptop>().dimTimer = dim.GetComponent<DimensionTimer>();
 
         laptop.transform.parent = mainDimension.transform;
         portal.dimensionChanging.Add(cameraRig);
@@ -89,7 +101,15 @@ public class GameManager : MonoBehaviour {
 
     public void DestroyLaptop(GameObject Laptop)
     {
+        if (cameraRig.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
+        {
+            DimensionChanger.SwitchDimensions(cameraRig, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
+        }
+        if (Laptop.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
+        {
+            DimensionChanger.SwitchDimensions(Laptop, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
+        }
         Destroy(createdDimensions[Laptop]);
-        Destroy(Laptop);
+        Laptop.GetComponent<Laptop>().selfDestruct();
     }
 }

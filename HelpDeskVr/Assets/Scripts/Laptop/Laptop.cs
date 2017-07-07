@@ -5,6 +5,8 @@ using VRTK;
 
 public class Laptop : VRTK_InteractableObject
 {
+    public GameObject connectedDimension;
+    public DimensionTimer dimTimer;
 
     [SerializeField]
     public VRTK_SnapDropZone USB_DropZone;
@@ -94,4 +96,25 @@ public class Laptop : VRTK_InteractableObject
         }
         yield return null;
     }
+
+    public void selfDestruct()
+    {
+        //BlueScreen
+        StartCoroutine(destroyMe());
+    }
+
+    public void laptopFixed()
+    {
+        //Laptop goes good
+        StartCoroutine(destroyMe());
+    }
+
+    IEnumerator destroyMe()
+    {
+        yield return new WaitForSeconds(10.0f);
+        //create particles of destruction
+        Destroy(this.gameObject);
+        yield return null;
+    }
+
 }
