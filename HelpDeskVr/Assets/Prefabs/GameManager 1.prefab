@@ -69,3 +69,7 @@ MonoBehaviour:
     Dimension: {fileID: 1779741861825298, guid: 1960ddd453920fd4eb9306de3855b927,
       type: 2}
     fix: 2
+  - Laptop: {fileID: 1906204298200032, guid: ceb714bda7cab4d40b8ff8a65c9b5d62, type: 2}
+    Dimension: {fileID: 1281118273020438, guid: 3238e5caaeb9ad64198d5318610d045d,
+      type: 2}
+    fix: 3

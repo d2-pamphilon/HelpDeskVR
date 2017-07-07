@@ -58,15 +58,16 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        foreach (KeyValuePair<GameObject, GameObject> entry in createdDimensions)
-        {
-            if (entry.Value.GetComponent<DimensionTimer>().timeOver)
-            {
-                DestroyLaptop(entry.Key);
-                LayerManager.instance.RemoveLayer(entry.Value.GetComponent<Dimension>().layer);
-                createdDimensions.Remove(entry.Key);
-            }
-        }
+        //foreach (KeyValuePair<GameObject, GameObject> entry in createdDimensions)
+        //{
+        //    if (entry.Value.GetComponent<DimensionTimer>().timeOver)
+        //    {
+        //        DestroyLaptop(entry.Key);
+        //        LayerManager.instance.RemoveLayer(entry.Value.GetComponent<Dimension>().layer);
+        //        createdDimensions.Remove(entry.Key);
+        //        break;
+        //    }
+        //}
 
 
 
@@ -82,6 +83,10 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SpawnLaptop(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SpawnLaptop(3);
         }
     }
 
