@@ -34,10 +34,10 @@ public class FixatronController : MonoBehaviour {
     GameObject[] Lights;
 
     [SerializeField]
-    VRTK_SnapDropZone USB_DropZone;
+    List<VRTK_SnapDropZone> USB_DropZones;
          
     [SerializeField]
-    GameObject currentUSB;
+    List<GameObject> currentUSBs;
          
     [SerializeField]
     float timeToDownload;
@@ -58,15 +58,19 @@ public class FixatronController : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-        USB_DropZone.ObjectSnappedToDropZone += USB_DropZone_ObjectSnappedToDropZone;
-        USB_DropZone.ObjectUnsnappedFromDropZone += USB_DropZone_ObjectUnsnappedFromDropZone;
+        for (int i = 0; i < USB_DropZones.Count; i++)
+        {
+            USB_DropZones[i].ObjectSnappedToDropZone += USB_DropZone_ObjectSnappedToDropZone;
+            USB_DropZones[i].ObjectUnsnappedFromDropZone += USB_DropZone_ObjectUnsnappedFromDropZone;
+        }
+       
         currentState = STATE.WaitingForUSB;
         updateMonitors();
     }
 
     private void USB_DropZone_ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
     {
-        currentUSB = e.snappedObject;
+        currentUSBs.Add(e.snappedObject);
         if (currentProgram != USB_PROGRAM.NONE)
         {
             currentState = STATE.WaitingToDownload;
@@ -90,7 +94,7 @@ public class FixatronController : MonoBehaviour {
             e.snappedObject.GetComponent<USBController>().program = USB_PROGRAM.NONE;
             e.snappedObject.GetComponent<USBController>().isBad = true;
         }
-        currentUSB = null;
+        currentUSBs.Remove(e.snappedObject);
         stopDownloadAndInstall();
     }
 
@@ -111,7 +115,10 @@ public class FixatronController : MonoBehaviour {
             if (timer > timeToInstall)
             {
                 currentState = STATE.USBReady;
-                currentUSB.GetComponent<USBController>().program = currentProgram;
+                foreach (GameObject currentUSB in currentUSBs)
+                {
+                    currentUSB.GetComponent<USBController>().program = currentProgram;
+                }
                 timer = 0.0f;
             }
             updateMonitors();

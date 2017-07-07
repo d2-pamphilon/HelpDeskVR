@@ -71,5 +71,6 @@ public class PasswordsSpawner : MonoBehaviour {
         newPass.GetComponent<PasswordMovement>().target = centerPoint.position + dir;
         newPass.GetComponent<PasswordMovement>().centerPoint = centerPoint;
         newPass.transform.parent = transform;
+        newPass.layer = gameObject.layer;
     }
 }

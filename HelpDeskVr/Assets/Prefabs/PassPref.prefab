@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 23564744872272670}
   - component: {fileID: 102914828636807110}
   - component: {fileID: 114136701754279258}
+  - component: {fileID: 54890016897791054}
+  - component: {fileID: 135065412772952536}
   m_Layer: 0
   m_Name: PassPref
   m_TagString: Untagged
@@ -36,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717811546046286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.956522, y: 9.717906, z: 9.171122}
+  m_LocalPosition: {x: -2.7792525, y: 0.22825575, z: -0.31627688}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,6 +75,21 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!54 &54890016897791054
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717811546046286}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!102 &102914828636807110
 TextMesh:
   serializedVersion: 3
@@ -105,5 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59d1d4005974f7489783bc9a71da924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {x: 0, y: 0, z: 0}
   centerPoint: {fileID: 0}
-  minDistance: 0
+--- !u!135 &135065412772952536
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717811546046286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39456296
+  m_Center: {x: 10.75, y: -2.7929688, z: 0}

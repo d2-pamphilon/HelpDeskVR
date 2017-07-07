@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1886532098516798}
+  m_IsPrefabParent: 1
+--- !u!1 &1886532098516798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4504693530762924}
+  - component: {fileID: 114870041554514468}
+  m_Layer: 0
+  m_Name: GameManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4504693530762924
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1886532098516798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114870041554514468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1886532098516798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592beb27e297dc54d91bfc6e7b061313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainDimension: {fileID: 0}
+  mainCamera: {fileID: 0}
+  cameraRig: {fileID: 0}
+  laptopSpawnPoint: {fileID: 0}
+  dimensionSpawnPoint: {fileID: 0}
+  laptopsPrefabs:
+  - Laptop: {fileID: 1906204298200032, guid: ceb714bda7cab4d40b8ff8a65c9b5d62, type: 2}
+    Dimension: {fileID: 1576983828602768, guid: a5d50f3b1bf88514889a9e87e39c2075,
+      type: 2}
+    fix: 5
+  - Laptop: {fileID: 1906204298200032, guid: ceb714bda7cab4d40b8ff8a65c9b5d62, type: 2}
+    Dimension: {fileID: 1820329514831618, guid: 3ae762625672af640bcbed703c46befc,
+      type: 2}
+    fix: 4
+  - Laptop: {fileID: 1906204298200032, guid: ceb714bda7cab4d40b8ff8a65c9b5d62, type: 2}
+    Dimension: {fileID: 1779741861825298, guid: 1960ddd453920fd4eb9306de3855b927,
+      type: 2}
+    fix: 2

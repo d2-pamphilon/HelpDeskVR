@@ -8,6 +8,8 @@ public class Laptop : VRTK_InteractableObject
     public GameObject connectedDimension;
     public DimensionTimer dimTimer;
 
+    public USB_PROGRAM correctSolution;
+
     [SerializeField]
     public VRTK_SnapDropZone USB_DropZone;
 
@@ -15,6 +17,12 @@ public class Laptop : VRTK_InteractableObject
     GameObject monitor;
     bool open;
     bool firstTimeGrab;
+
+    [SerializeField]
+    GameObject portal;
+
+    [SerializeField]
+    GameObject canvas;
 
     public override void Grabbed(GameObject currentGrabbingObject)
     {
@@ -63,6 +71,10 @@ public class Laptop : VRTK_InteractableObject
     private void USB_DropZone_ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
     {
         currentUSB = e.snappedObject;
+        if (currentUSB.GetComponent<USBController>().program == correctSolution)
+        {
+            StartCoroutine(laptopFixed());
+        }
     }
 
     private void USB_DropZone_ObjectUnsnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
@@ -100,13 +112,24 @@ public class Laptop : VRTK_InteractableObject
     public void selfDestruct()
     {
         //BlueScreen
+        canvas.active = true;
+        portal.active = false;
+        canvas.transform.FindChild("BlueScreen").gameObject.active = true;
+        canvas.transform.FindChild("WindowsHappy").gameObject.active = false;
         StartCoroutine(destroyMe());
     }
 
-    public void laptopFixed()
+    IEnumerator laptopFixed()
     {
+        GameManager.Instance.DestroyDimension(this.gameObject);
         //Laptop goes good
-        StartCoroutine(destroyMe());
+        canvas.active = true;
+        portal.active = false;
+        canvas.transform.FindChild("BlueScreen").gameObject.active = false;
+        canvas.transform.FindChild("WindowsHappy").gameObject.active = true;
+        yield return new WaitForSeconds(10.0f);
+        Destroy(this.gameObject);
+        yield return null;
     }
 
     IEnumerator destroyMe()

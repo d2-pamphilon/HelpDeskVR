@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LayerManager {
-	private static LayerManager instance = null;  
+	public  static LayerManager instance = null;  
 
 	public List<string> definedLayers;
 	private static int totalLayerNum = 31;
@@ -34,5 +34,8 @@ public class LayerManager {
 		return totalLayerNum - definedLayers.Count;
 	}
 
-
+    public void RemoveLayer(int index)
+    {
+        definedLayers.RemoveAt(totalLayerNum - index);
+    }
 }
