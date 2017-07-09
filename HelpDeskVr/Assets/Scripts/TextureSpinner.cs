@@ -5,6 +5,7 @@ using UnityEngine;
 // commented bits are for scrolling backgrounds if needed
 public class TextureSpinner : MonoBehaviour {
     public float speed = 0.0f;
+    [SerializeField]
     private Material mat;
 
    // public Renderer rend;
@@ -12,7 +13,7 @@ public class TextureSpinner : MonoBehaviour {
 
     void Start()
     {
-        mat = GetComponent<Skybox>().material;
+        //mat = GetComponent<Skybox>().material;
        // rend = GetComponent<MeshRenderer>();
     }
 

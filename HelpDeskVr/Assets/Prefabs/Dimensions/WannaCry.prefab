@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 4300474140017144}
   - component: {fileID: 114524899602941962}
   - component: {fileID: 114576993455252446}
+  - component: {fileID: 114527959389748318}
   m_Layer: 0
   m_Name: WannaCry
   m_TagString: Untagged
@@ -1064,6 +1065,19 @@ MonoBehaviour:
   initialWorld: 0
   connectedPortals: []
   cam: {fileID: 0}
+--- !u!114 &114527959389748318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1982885877053738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4582b1c4c2cdb1041aaa0a53a8992afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  mat: {fileID: 2100000, guid: bfe197ca8a10c0a41b0d6b54be75019f, type: 2}
 --- !u!114 &114576993455252446
 MonoBehaviour:
   m_ObjectHideFlags: 1
