@@ -20,15 +20,12 @@ public class SceneChanger : MonoBehaviour {
     bool leaderboardActive;
     public float speed = 0.001f;
 
-    Vector3 leaderboardVelocity;
-    Vector3 mainMenuVelocity;
-
     public void Update()
     {
         if (leaderboardActive)
         {
             leaderboard.SetActive(true);
-            if (Vector3.Distance(mainMenu.transform.position, upPoint.position) > 1.0f)
+            if (Vector3.Distance(mainMenu.transform.position, upPoint.position) < 1.0f)
             {
                 mainMenu.SetActive(false);
             }
@@ -36,18 +33,15 @@ public class SceneChanger : MonoBehaviour {
         if (!leaderboardActive)
         {
             mainMenu.SetActive(true);
-            if (Vector3.Distance(leaderboard.transform.position, downPoint.position) > 1.0f)
+            if (Vector3.Distance(leaderboard.transform.position, downPoint.position) < 1.0f)
             {
                 leaderboard.SetActive(false);
             }
         }
-        
-        //Mathf.Sin();
 
         if (leaderboardActive && (Vector3.Distance(leaderboard.transform.position, centerPoint.position) > 1.0f))
         {
-            //leaderboardVelocity.
-            leaderboard.transform.position += leaderboardVelocity; // Vector3.Lerp(leaderboard.transform.position, centerPoint.position, Time.deltaTime * speed);
+            leaderboard.transform.position = Vector3.Lerp(leaderboard.transform.position, centerPoint.position, Time.deltaTime * speed);
             mainMenu.transform.position = Vector3.Lerp(mainMenu.transform.position, upPoint.position, Time.deltaTime * speed);
         }
         else if (!leaderboardActive && (Vector3.Distance(mainMenu.transform.position, centerPoint.position) > 1.0f))
