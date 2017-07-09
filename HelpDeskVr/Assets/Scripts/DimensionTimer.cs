@@ -11,7 +11,7 @@ public class DimensionTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        maxTime = 0.0f;
+        //maxTime = 0.0f;
         elapsedTime = 0.0f;
         timeOver = false;
 	}

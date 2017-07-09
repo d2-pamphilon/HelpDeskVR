@@ -12,6 +12,7 @@ public class Bobing : MonoBehaviour
     void Start()
     {
         timer = 0;
+        player = GameObject.Find("Camera (eye)");
     }
 
     void Update()

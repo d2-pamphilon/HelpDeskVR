@@ -13,6 +13,34 @@ public struct LaptopDimension
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+
+    [Header("Laptop Spawning Settings", order = 0)]
+    [Space(10, order = 1)]
+
+    [SerializeField]
+    public float minimumFramesForSpawningLaptop = 120.0f;
+
+    [SerializeField]
+    float baseLaptopSpawnTime = 60.0f;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    float difficultyDecreaseForFailedLaptop = 0.3f;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    float difficultyIncreaseForFixedLaptop = 0.3f;
+
+    //Laptop Spawning
+    [Range(1.0f, 4.0f)]
+    public float difficulty = 1.0f;
+    float timeUntilNextSpawn = 60.0f;
+    float laptopTimer = 0.0f;
+
+
+    [Header("GameManager needed Links", order = 2)]
+    [Space(10, order = 3)]
+
     [SerializeField]
     GameObject mainDimension;
     [SerializeField]
@@ -25,10 +53,22 @@ public class GameManager : MonoBehaviour {
     Transform dimensionSpawnPoint;
     [SerializeField]
     public LaptopDimension[] laptopsPrefabs;
-
-    protected Dictionary<GameObject, GameObject> createdDimensions;
-
+    [SerializeField]
     public ScoreTracker scoreTracker;
+
+    public Dictionary<GameObject, GameObject> createdDimensions;
+
+
+    [Header("FPS counting settings", order = 4)]
+    [Space(10, order = 5)]
+    [Range(0.1f, 1.0f)]
+    public float m_refreshTime = 0.5f;
+
+    int m_frameCounter = 0;
+    float m_timeCounter = 0.0f;
+    float m_lastFramerate = 0.0f;
+
+   
 
     //Awake is always called before any Start functions
     void Awake()
@@ -58,20 +98,59 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //foreach (KeyValuePair<GameObject, GameObject> entry in createdDimensions)
-        //{
-        //    if (entry.Value.GetComponent<DimensionTimer>().timeOver)
-        //    {
-        //        DestroyLaptop(entry.Key);
-        //        LayerManager.instance.RemoveLayer(entry.Value.GetComponent<Dimension>().layer);
-        //        createdDimensions.Remove(entry.Key);
-        //        break;
-        //    }
-        //}
+        if (mainDimension.GetComponent<DimensionTimer>().timeOver)
+        {
+            Application.LoadLevel(2);
+            scoreTracker.saveData();
+            Destroy(this.gameObject);
+        }
+
+        //Get FPS to make sure not spawning too manny dimensions
+        if (m_timeCounter < m_refreshTime)
+        {
+            m_timeCounter += Time.deltaTime;
+            m_frameCounter++;
+        }
+        else
+        {
+            //This code will break if you set your m_refreshTime to 0, which makes no sense.
+            m_lastFramerate = (float)m_frameCounter / m_timeCounter;
+            m_frameCounter = 0;
+            m_timeCounter = 0.0f;
+        }
+
+        //Delete finished dimensions;
+        foreach (KeyValuePair<GameObject, GameObject> entry in createdDimensions)
+        {
+            if (entry.Value.GetComponent<DimensionTimer>().timeOver)
+            {
+                GameObject tempLap = entry.Key;
+                GameObject tempDim = entry.Value;
+                DestroyLaptop(tempLap);
+                LayerManager.instance.RemoveLayer(tempDim.GetComponent<Dimension>().layer);
+                difficulty = Mathf.Max(1.0f, difficulty - difficultyDecreaseForFailedLaptop);
+                break;
+            }
+        }
+
+        //Laptop spawning code
+        timeUntilNextSpawn = baseLaptopSpawnTime / difficulty;
+
+        laptopTimer += Time.deltaTime;
+        if (laptopTimer > timeUntilNextSpawn && m_lastFramerate > minimumFramesForSpawningLaptop)
+        {
+            laptopTimer = 0.0f;
+            SpawnLaptop(Random.Range(0, 4));
+        }
+        if (createdDimensions.Count == 0)
+        {
+            laptopTimer = 0.0f;
+            SpawnLaptop(Random.Range(0, 4));
+        }
 
 
 
-        //Laptop spawning codes
+        //Laptop spawning cheat codes
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SpawnLaptop(0);
@@ -88,6 +167,7 @@ public class GameManager : MonoBehaviour {
         {
             SpawnLaptop(3);
         }
+
     }
 
     public void SpawnLaptop(int index)
@@ -137,6 +217,7 @@ public class GameManager : MonoBehaviour {
         if (cameraRig.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
         {
             DimensionChanger.SwitchDimensions(cameraRig, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
+            DimensionChanger.SwitchCameraRender(mainCamera, createdDimensions[Laptop].GetComponent<Dimension>().layer, mainDimension.GetComponent<Dimension>().layer, null);
         }
         if (Laptop.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
         {
@@ -151,6 +232,7 @@ public class GameManager : MonoBehaviour {
         if (cameraRig.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
         {
             DimensionChanger.SwitchDimensions(cameraRig, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
+            DimensionChanger.SwitchCameraRender(mainCamera, createdDimensions[Laptop].GetComponent<Dimension>().layer, mainDimension.GetComponent<Dimension>().layer, null);
         }
         if (Laptop.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
         {
@@ -158,5 +240,6 @@ public class GameManager : MonoBehaviour {
         }
         Destroy(createdDimensions[Laptop]);
         scoreTracker.currentScore.laptopsFixed++;
+        difficulty = Mathf.Min(4.0f, difficulty + difficultyIncreaseForFixedLaptop);
     }
 }

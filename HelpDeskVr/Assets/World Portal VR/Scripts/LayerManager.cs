@@ -36,6 +36,6 @@ public class LayerManager {
 
     public void RemoveLayer(int index)
     {
-        definedLayers.RemoveAt(totalLayerNum - index);
+        definedLayers.RemoveAt(totalLayerNum - index -1);
     }
 }

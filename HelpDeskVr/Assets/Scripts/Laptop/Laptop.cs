@@ -75,6 +75,11 @@ public class Laptop : VRTK_InteractableObject
         {
             StartCoroutine(laptopFixed());
         }
+        else
+        {
+            //Laptop Fails TODO might want to change this
+            dimTimer.maxTime = 0.0f;
+        }
     }
 
     private void USB_DropZone_ObjectUnsnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
@@ -134,6 +139,7 @@ public class Laptop : VRTK_InteractableObject
 
     IEnumerator destroyMe()
     {
+        GameManager.Instance.createdDimensions.Remove(this.gameObject);
         yield return new WaitForSeconds(10.0f);
         //create particles of destruction
         Destroy(this.gameObject);
