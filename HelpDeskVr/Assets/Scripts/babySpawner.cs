@@ -10,7 +10,7 @@ public class babySpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] SpawnLocations;
 
-    [SerializedFeild]
+    [SerializeField]
     private GameObject ParentObj;
     
 
@@ -32,7 +32,7 @@ public class babySpawner : MonoBehaviour
             if (timer >= 1)
             {
                 //efficent, place location in random order in list
-                Instantiate(Head, SpawnLocations[counter].transform.position, SpawnLocations[counter].transform.rotation, ParentObj);
+                Instantiate(Head, SpawnLocations[counter].transform.position, SpawnLocations[counter].transform.rotation, ParentObj.transform);
                 counter++;
                 timer = 0;
             }
