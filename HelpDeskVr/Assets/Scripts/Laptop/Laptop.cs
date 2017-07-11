@@ -5,6 +5,8 @@ using VRTK;
 
 public class Laptop : VRTK_InteractableObject
 {
+
+    [Header("Laptop Options")]
     public GameObject connectedDimension;
     public DimensionTimer dimTimer;
 
