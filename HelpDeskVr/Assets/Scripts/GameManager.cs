@@ -100,8 +100,8 @@ public class GameManager : MonoBehaviour {
 
         if (mainDimension.GetComponent<DimensionTimer>().timeOver)
         {
-            Application.LoadLevel(2);
             scoreTracker.saveData();
+            Application.LoadLevel(2);
             Destroy(this.gameObject);
         }
 
