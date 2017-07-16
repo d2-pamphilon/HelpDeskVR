@@ -16,6 +16,7 @@ TagManager:
   - Torso
   - OtherSaucers
   - USB
+  - USB Spawn
   layers:
   - Default
   - TransparentFX
