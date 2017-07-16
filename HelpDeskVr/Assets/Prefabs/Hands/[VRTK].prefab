@@ -3221,8 +3221,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1914305490662744}
   actualLeftController: {fileID: 1527631183153958}
   actualRightController: {fileID: 1560892836375940}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 1779296568564988}
+  modelAliasRightController: {fileID: 1660359044498974}
   scriptAliasLeftController: {fileID: 1779296568564988}
   scriptAliasRightController: {fileID: 1660359044498974}
 --- !u!114 &114175120304440824
@@ -3595,7 +3595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 705
+  m_Text: 
 --- !u!114 &114889486279597844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3608,9 +3608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_watch: {fileID: 1066174519071166}
-  m_fOriginalTime: 10
+  m_DimensionTimer: {fileID: 0}
   m_text: {fileID: 114850522999652974}
-  m_bStart: 0
+  m_bInDimen: 0
 --- !u!114 &114963241221406714
 MonoBehaviour:
   m_ObjectHideFlags: 1

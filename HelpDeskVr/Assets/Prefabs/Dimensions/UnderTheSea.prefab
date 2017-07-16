@@ -1531,6 +1531,7 @@ GameObject:
   - component: {fileID: 4398703173382112}
   - component: {fileID: 114046529737515782}
   - component: {fileID: 114687586126188876}
+  - component: {fileID: 114664816830762560}
   m_Layer: 0
   m_Name: UnderTheSea
   m_TagString: Untagged
@@ -5108,7 +5109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344435414310764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019357108, y: 0.25, z: -2.726419}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4398703173382112}
@@ -6837,7 +6838,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281118273020438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019357108, y: 0.7699603, z: 1.1144189}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4137110280533858}
@@ -15516,7 +15517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customSkybox: {fileID: 0}
   layer: 0
-  initialWorld: 0
+  initialWorld: 1
   connectedPortals: []
   cam: {fileID: 0}
 --- !u!114 &114268055450024238
@@ -15579,14 +15580,25 @@ MonoBehaviour:
   m_CamHead: {fileID: 0}
   m_Fish: {fileID: 1969406654432958, guid: 905d616541fe9d043a8e3bc0501a3ed0, type: 2}
   m_SpawnLoc: []
-  s_Origin: {fileID: 0}
-  m_Time: 0
-  m_Timer: 0
   m_Min: 1
-  m_Max: 3
-  m_SpawCount: 0
+  m_Max: 2
   m_SpawnCap: 10
-  m_Tollerance: 0.26
+  m_Tollerance: 1
+  testlochist: []
+--- !u!114 &114664816830762560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281118273020438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ee6c710cd4e0640b209bc05a5638c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UnderwaterColour: {r: 0, g: 0, b: 0, a: 0}
+  m_UnderWaterDensity: 0.03
+  m_timer: 0
 --- !u!114 &114687586126188876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15599,6 +15611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 120
+  elapsedTime: 0
   timeOver: 0
 --- !u!114 &114916029425579700
 MonoBehaviour:
