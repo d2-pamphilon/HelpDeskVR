@@ -50,7 +50,8 @@ public class FishSpawn : MonoBehaviour
         m_SpawnLoc[2].transform.localPosition = new Vector3(0, 0, 1);
         m_SpawnLoc[3].transform.localPosition = new Vector3(1, 0, 0);
 
-
+        m_CamHead = GameObject.Find("Camera (eye)");
+        s_Origin = m_CamHead.transform;
 
     }
 
@@ -63,14 +64,20 @@ public class FishSpawn : MonoBehaviour
 
             if (m_Timer >= m_Time)
             {
+<<<<<<< HEAD
                 Vector3 val = RandSpawn(m_SpawnLoc[Random.Range(0, m_SpawnLoc.Capacity)]);
                 testlochist.Add(val);
                 GameObject fish = Instantiate(m_Fish, val, Quaternion.identity, gameObject.transform);
                 fish.GetComponent<FishOrbit>().SetOrigin(gameObject.transform.position);
                 fish.tag = gameObject.tag;
+=======
+>>>>>>> origin/master
                 m_Timer = 0;
                 m_Time = Random.Range(m_Min, m_Max);
                 m_SpawCount++;
+
+                GameObject fish = Instantiate(m_Fish, RandSpawn(m_SpawnLoc[0]), Quaternion.identity, gameObject.transform);
+                fish.GetComponent<FishOrbit>().SetOrigin(s_Origin.position);
             }
         }
     }

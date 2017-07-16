@@ -9,6 +9,47 @@ public class Score
     public int laptopsFixed;
     public int laptopsFailed;
     public string playerName;
+
+    public override string ToString()
+    {
+        string str = playerName + "\t" +
+                     laptopsFixed + "\t" + 
+                     laptopsFailed + "\n";
+        return str; 
+    }
+}
+
+public class ScoreComparer : IComparer<Score>
+{
+    public int Compare(Score a, Score b)
+    {
+        // if a is bigger a goes first
+
+        // if a is smaller a goes first
+        if (a.laptopsFixed > b.laptopsFixed)
+        {
+            return -1;
+        }
+        else if (a.laptopsFixed == b.laptopsFixed)
+        {
+            if (a.laptopsFailed < b.laptopsFailed)
+            {
+                return -1;
+            }
+            else if (a.laptopsFailed == b.laptopsFailed)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
 
 public class ScoreTracker {
