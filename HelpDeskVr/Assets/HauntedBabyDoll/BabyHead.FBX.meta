@@ -1,48 +1,15 @@
 fileFormatVersion: 2
-guid: 1ae83dc65d592ff4286dc5e052faa013
-timeCreated: 1500233766
+guid: d122decc7a1b3f847942c53e0d0ec731
+timeCreated: 1500233811
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: BabyDoll
-    100004: j_head
-    100006: j_headEnd
-    100008: j_l_clavicle
-    100010: j_l_handEnd
-    100012: j_l_shoulder
-    100014: j_neck
-    100016: j_r_arm
-    100018: j_r_arm 1
-    100020: j_r_clavicle
-    100022: j_r_handEnd
-    100024: j_r_shoulder
-    100026: j_root
-    100028: j_spine1
-    100030: j_spine2
-    100032: j_spine3
     400000: //RootNode
-    400002: BabyDoll
-    400004: j_head
-    400006: j_headEnd
-    400008: j_l_clavicle
-    400010: j_l_handEnd
-    400012: j_l_shoulder
-    400014: j_neck
-    400016: j_r_arm
-    400018: j_r_arm 1
-    400020: j_r_clavicle
-    400022: j_r_handEnd
-    400024: j_r_shoulder
-    400026: j_root
-    400028: j_spine1
-    400030: j_spine2
-    400032: j_spine3
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: BabyDoll
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: BabyDoll
   materials:
     importMaterials: 1
     materialName: 0
@@ -105,7 +72,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
