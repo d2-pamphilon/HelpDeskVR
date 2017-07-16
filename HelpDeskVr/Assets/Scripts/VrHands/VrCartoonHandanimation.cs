@@ -155,13 +155,13 @@ public class VrCartoonHandanimation : MonoBehaviour
 
     private void DoTouchPadPressed(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        if (m_watch != null)
-            m_watch.SetWatchActive(true);
+       // if (m_watch != null)
+           // m_watch.SetWatchActive(true);
     }
     private void DoTouchPadReleased(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        if (m_watch != null)
-            m_watch.SetWatchActive(false);
+        //if (m_watch != null)
+           // m_watch.SetWatchActive(false);
     }
 
 

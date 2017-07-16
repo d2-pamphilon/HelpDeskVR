@@ -27,7 +27,7 @@ public class BoatSpawn : MonoBehaviour
             m_time = 0;
             randFloat = Random.RandomRange(minTime, maxTime);
             spawloc = Random.Range(-10, 50);
-            GameObject t_GO = Instantiate(m_boat, new Vector3(transform.position.x, transform.position.y, spawloc), Quaternion.identity);
+            GameObject t_GO = Instantiate(m_boat, new Vector3(transform.position.x, transform.position.y, spawloc), Quaternion.identity, transform.parent);
            // Destroy(t_GO, 10f);
         }
     }

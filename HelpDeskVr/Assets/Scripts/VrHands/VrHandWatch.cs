@@ -6,29 +6,40 @@ using UnityEngine.UI;
 public class VrHandWatch : MonoBehaviour
 {
     public GameObject m_watch;
-    public float m_fOriginalTime;
+    public DimensionTimer m_DimensionTimer;
+
     public Text m_text;
     private float m_fTime;
-    public bool m_bStart;
+
+    public bool m_bInDimen; //in dimention or not
+
+
 
     // Use this for initialization
     void Start()
     {
-        //   m_watch = gameObject;
-        //On start turn off watch only turns on in dimensions
-        m_watch.SetActive(false);
-        m_fTime = m_fOriginalTime;
-        m_bStart = false;
+        
+        m_bInDimen = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_bStart)
+        if(FindObjectOfType<DimensionTimer>() !=null)
         {
-            m_fTime -= Time.deltaTime;
+            m_bInDimen = true;
+            //change watch text size here
+        }
+        else
+        {
+            m_bInDimen = false;
+            //change watch text size here
+        }
 
-            int m_iTime = (int)m_fTime;
+
+        if (m_bInDimen)
+        {
+            int m_iTime = (int)m_DimensionTimer.getRemainingTime();
             ConvertToString(m_iTime);
 
             if (m_iTime <= 20 && m_iTime >= 11)
@@ -37,55 +48,30 @@ public class VrHandWatch : MonoBehaviour
             if (m_iTime <= 10.0)
                 m_text.color = Color.red;
 
-            if (m_fTime <= 0.0)
+            if (m_iTime <= 0.0)
             {
-                m_fTime = m_fOriginalTime;
+                m_bInDimen = false;
                 m_text.color = Color.black;
-                OutDimention();
             }
         }
-
-
+        else
+        {
+            UpdateText(System.DateTime.Now.ToString("HH:mm:ss"));
+        }
     }
-
-
-
-    public void InDimension(float _StartTime)
-    {
-        SetTime(_StartTime);
-        m_bStart = true; //start timer
-    }
-    public void SetTime(float _fTime) // set the starting time in the world
-    {
-        m_fOriginalTime = _fTime;
-    }
-
-
-    public void OutDimention() //this shouldn't work outside of worlds
-    {
-        SetWatchActive(false);
-        m_bStart = false;
-        
-    }
-
-
 
     public void ConvertToString(int _int)
     {
         UpdateText(_int.ToString());
     }
 
-
     public void UpdateText(string _text)
     {
         m_text.text = _text;
     }
 
-    public void SetWatchActive(bool _b)
-    {
-        if (m_bStart)
-            m_watch.SetActive(_b);
-    }
+   
+
 
 
 }
