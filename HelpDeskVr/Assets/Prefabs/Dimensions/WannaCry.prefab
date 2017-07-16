@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fc569012251441a8fdc196d69ae63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customSkybox: {fileID: 2100000, guid: bfe197ca8a10c0a41b0d6b54be75019f, type: 2}
+  customSkybox: {fileID: 2100000, guid: 8afe75a3c72efc443ba7895a1818b2ef, type: 2}
   layer: 0
   initialWorld: 0
   connectedPortals: []
@@ -1071,13 +1071,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982885877053738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4582b1c4c2cdb1041aaa0a53a8992afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  mat: {fileID: 2100000, guid: bfe197ca8a10c0a41b0d6b54be75019f, type: 2}
+  mat: {fileID: 2100000, guid: efefe7ea37b91e14491d20fcf164348c, type: 2}
 --- !u!114 &114576993455252446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 120
+  elapsedTime: 0
   timeOver: 0
 --- !u!114 &114630008828093094
 MonoBehaviour:
@@ -1131,3 +1132,4 @@ MonoBehaviour:
   - {fileID: 1037531842011360}
   - {fileID: 1591758579794436}
   ParentObj: {fileID: 1982885877053738}
+  DT: {fileID: 0}
