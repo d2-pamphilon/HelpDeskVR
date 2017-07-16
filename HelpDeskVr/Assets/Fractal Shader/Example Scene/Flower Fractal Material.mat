@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Flower Fractal Material
+  m_Shader: {fileID: 4800000, guid: 8fad74b0acb940c49aa11fcbef245064, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs: []
+    m_Floats:
+    - first:
+        name: backgroundColourAmount
+      second: 0
+    - first:
+        name: blueFixedValue
+      second: 0
+    - first:
+        name: blueFormula
+      second: 7
+    - first:
+        name: blueMultiplier
+      second: 0.00002
+    - first:
+        name: centreX
+      second: 0
+    - first:
+        name: centreY
+      second: 0
+    - first:
+        name: convergenceThreshold
+      second: 4
+    - first:
+        name: fractalType
+      second: 1
+    - first:
+        name: greenFixedValue
+      second: 1
+    - first:
+        name: greenFormula
+      second: 10
+    - first:
+        name: greenMultiplier
+      second: 0.00002
+    - first:
+        name: iterations
+      second: 7
+    - first:
+        name: juliaConstantImaginary
+      second: 0
+    - first:
+        name: juliaConstantReal
+      second: 4
+    - first:
+        name: multibrot
+      second: 4
+    - first:
+        name: redFixedValue
+      second: 1
+    - first:
+        name: redFormula
+      second: 7
+    - first:
+        name: redMultiplier
+      second: 0.00002
+    - first:
+        name: scale
+      second: 5.264025
+    - first:
+        name: smoothing
+      second: 0
+    m_Colors:
+    - first:
+        name: backgroundColour
+      second: {r: 0, g: 0, b: 0, a: 1}

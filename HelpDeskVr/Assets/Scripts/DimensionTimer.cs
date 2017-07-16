@@ -6,7 +6,7 @@ using UnityEngine;
 public class DimensionTimer : MonoBehaviour {
 
     public float maxTime;
-    float elapsedTime;
+    public float elapsedTime;
     public bool timeOver;
 
 	// Use this for initialization
