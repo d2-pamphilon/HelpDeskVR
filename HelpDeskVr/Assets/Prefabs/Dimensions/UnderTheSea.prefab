@@ -15584,7 +15584,6 @@ MonoBehaviour:
   m_Max: 2
   m_SpawnCap: 10
   m_Tollerance: 1
-  testlochist: []
 --- !u!114 &114664816830762560
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -70,7 +70,7 @@ public class FishSpawn : MonoBehaviour
                 //testlochist.Add(val);
                 GameObject fish = Instantiate(m_Fish, val, Quaternion.identity, gameObject.transform);
                 fish.GetComponent<FishOrbit>().SetOrigin(gameObject.transform.position);
-                fish.tag = gameObject.tag;
+                fish.layer = gameObject.layer;
 
                 m_Timer = 0;
                 m_Time = Random.Range(m_Min, m_Max);
