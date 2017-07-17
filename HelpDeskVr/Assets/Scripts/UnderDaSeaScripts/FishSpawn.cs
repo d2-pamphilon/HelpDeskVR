@@ -6,53 +6,55 @@ public class FishSpawn : MonoBehaviour
 {
     public GameObject m_CamHead;
     public GameObject m_Fish;
-    public List<GameObject> m_SpawnLoc;
- 
+    private List<GameObject> m_SpawnLoc;
+    private List<FishOrbit> m_FishList;
+    private Light m_Lighting;
+
+    private DimensionTimer s_Dtimer;
     //private Transform s_Origin;
-   //public Transform s_Origin;
+    //public Transform s_Origin;
 
     private float m_Time;
     private float m_Timer;
+    private float s_SpawnTime;
 
-    [Range(1, 40)]
-    public float m_Min;
-    [Range(2, 50)]
-    public float m_Max;
+    float m_FishTime;
+    float m_FishTimer;
 
     private int m_SpawCount = 0;
-    [Range(1, 30)]
-    public int m_SpawnCap = 100;
-    [Range(0, 2)]
-    public float m_Tollerance;
-    // Use this for initialization
+    public int m_SpawnCap = 30;
+    public float m_Tollerance = 2;
 
-    ///public List<Vector3> testlochist;
-
+    private float s_startSpeed = 100;
+    private float s_maxSpeed = 1000;
+    public float m_IncrementalSpeed;
+    public float currntspeed;
     void Start()
     {
+        GameObject dlight = GameObject.Find("Directional light");
+        m_Lighting = dlight.GetComponent<Light>();
 
-        //gameObject.transform.parent = m_CamHead.transform; //Parents the spawner to the back of the head
-        //gameObject.transform.position = new Vector3(0, 0, -1);
-        //s_Origin = GetComponentInParent<Transform>();
-        m_Time = Random.Range(m_Min, m_Max);
+        m_FishList = new List<FishOrbit>();
+        s_Dtimer = GetComponentInParent<DimensionTimer>();
+        s_SpawnTime = (s_Dtimer.maxTime - 10f) / m_SpawnCap;
+        m_Time = Random.Range(s_SpawnTime - 1, s_SpawnTime + 1);
 
         m_SpawnLoc = new List<GameObject>();
         for (int i = 0; i < 4; i++)
         {
-            //Add more spawn locations when bugs are fixed
-            m_SpawnLoc.Add(new GameObject("SpawnLoc"+i));
+            m_SpawnLoc.Add(new GameObject("SpawnLoc" + i));
             m_SpawnLoc[i].transform.parent = gameObject.transform;
         }
-
-        /*        ----Spawn seems to invert the Y axis from 1 to -1----      */
 
         m_SpawnLoc[0].transform.localPosition = new Vector3(0, 0, -1); // spawn location seems to be 0,-1,-1       
         m_SpawnLoc[1].transform.localPosition = new Vector3(-1, 0, 0);
         m_SpawnLoc[2].transform.localPosition = new Vector3(0, 0, 1);
         m_SpawnLoc[3].transform.localPosition = new Vector3(1, 0, 0);
 
-       /* m_CamHead = GameObject.Find("Camera (eye)");
-        s_Origin = m_CamHead.transform;*/
+        m_CamHead = GameObject.Find("Camera (eye)");
+        float speed =  s_maxSpeed-s_startSpeed;
+        m_IncrementalSpeed = s_Dtimer.maxTime/speed;
+        //m_IncrementalSpeed = speed / m_FishTime;
 
     }
 
@@ -67,24 +69,47 @@ public class FishSpawn : MonoBehaviour
             {
 
                 Vector3 val = RandSpawn(m_SpawnLoc[Random.Range(0, m_SpawnLoc.Capacity)]);
-                //testlochist.Add(val);
-                GameObject fish = Instantiate(m_Fish, val, Quaternion.identity, gameObject.transform);
+
+                GameObject fish = (Instantiate(m_Fish, val, Quaternion.identity, gameObject.transform));
+                m_FishList.Add(fish.GetComponent<FishOrbit>());
                 fish.GetComponent<FishOrbit>().SetOrigin(gameObject.transform.position);
                 fish.layer = gameObject.layer;
-
+                fish.GetComponent<FishOrbit>().m_Speed = m_IncrementalSpeed + 100;
                 m_Timer = 0;
-                m_Time = Random.Range(m_Min, m_Max);
+                m_Time = Random.Range(s_SpawnTime - 1, s_SpawnTime + 1);
                 m_SpawCount++;
 
             }
+
+        }
+
+
+        m_FishTimer += Time.deltaTime;
+        if (m_FishTimer >= m_FishTime)
+        {
+            currntspeed += m_IncrementalSpeed;
+            FishSpeed();
+            m_FishTimer = 0;
         }
     }
 
     Vector3 RandSpawn(GameObject _Loc)
     {
         Vector3 m_loc = _Loc.transform.position;
-        m_loc.y = Random.Range(/*m_loc.y - m_Tollerance*/ 0, m_loc.y + m_Tollerance);
+        m_loc.y = Random.Range(/*m_loc.y - m_Tollerance*/ 0.3f, m_loc.y + m_Tollerance);
         return m_loc;
     }
 
+
+
+    void FishSpeed()
+    {
+        for (int i = 0; i < m_FishList.Count; i++)
+        {
+            if (m_FishList[i].m_Speed <= s_maxSpeed)
+            {
+                m_FishList[i].m_Speed = currntspeed;
+            }
+        }
+    }
 }

@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class FishOrbit : MonoBehaviour
 {
-    public Vector3 s_Origin;
-    [Range(400, 10000)]
-    public float m_angle;
-   
+    public FishSpawn s_FishSpawn;
+    public Vector3 m_Origin;
+    public float m_Speed;
+    
     void Start()
     {
-
+        s_FishSpawn = GetComponentInParent<FishSpawn>();
     }
 
     void Update()
     {
-        transform.RotateAround(s_Origin, Vector3.up, m_angle * Time.deltaTime);
+        m_Origin.y = s_FishSpawn.m_CamHead.transform.position.y;
+        transform.RotateAround(m_Origin, Vector3.up, m_Speed * Time.deltaTime);
+        transform.LookAt(m_Origin);
     }
 
     public void SetOrigin(Vector3 _Origin)
     {
-        s_Origin = _Origin;
+        m_Origin = _Origin;
     }
 
     /*
