@@ -68,7 +68,7 @@ public class FishSpawn : MonoBehaviour
                 GameObject fish = (Instantiate(m_Fish, val, Quaternion.identity, gameObject.transform));
                 m_FishList.Add(fish.GetComponent<FishOrbit>());
                 fish.GetComponent<FishOrbit>().SetOrigin(gameObject.transform.position);
-                fish.layer = gameObject.layer;
+                DimensionChanger.SetLayerRecursively(fish, gameObject.layer);
                 fish.GetComponent<FishOrbit>().m_Speed = m_IncrementalSpeed + 100;
                 m_Timer = 0;
                 m_Time = Random.Range(s_SpawnTime - 1, s_SpawnTime + 1);

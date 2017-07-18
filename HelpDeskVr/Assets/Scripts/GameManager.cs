@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour {
     public void SpawnLaptop(int index)
     {
         GameObject laptop = Instantiate(laptopsPrefabs[index].Laptop);
+        DimensionChanger.SetLayerRecursively(laptop, mainDimension.layer);
         GameObject dim = Instantiate(laptopsPrefabs[index].Dimension);
         laptop.GetComponent<Laptop>().correctSolution = laptopsPrefabs[index].fix;
 
