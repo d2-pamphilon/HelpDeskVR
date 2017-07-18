@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 4398703173382112}
   - component: {fileID: 114046529737515782}
   - component: {fileID: 114687586126188876}
+  - component: {fileID: 114855093167871288}
   m_Layer: 30
   m_Name: UnderTheSea
   m_TagString: Untagged
@@ -1548,7 +1549,7 @@ GameObject:
   - component: {fileID: 4528745108865012}
   - component: {fileID: 108610179415939360}
   m_Layer: 30
-  m_Name: Directional light
+  m_Name: UnderWaterLighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2932,21 +2933,6 @@ GameObject:
   - component: {fileID: 64309709360915702}
   m_Layer: 30
   m_Name: Well_01 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1624373019319180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4460894733647694}
-  m_Layer: 30
-  m_Name: SpawnOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6226,7 +6212,6 @@ Transform:
   - {fileID: 4204056694207122}
   - {fileID: 4344643437484094}
   - {fileID: 4080922674187630}
-  - {fileID: 4460894733647694}
   - {fileID: 4528745108865012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6421,19 +6406,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4224963426507544}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4460894733647694
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1624373019319180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019357108, y: 1.12, z: -1.1144189}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4398703173382112}
-  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4462256087400688
 Transform:
@@ -6680,7 +6652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4398703173382112}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 24.075, y: 0, z: 0}
 --- !u!4 &4530238487144192
 Transform:
@@ -14661,7 +14633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 120
-  elapsedTime: 13.813675
+  elapsedTime: 0
   timeOver: 0
 --- !u!114 &114839868680541378
 MonoBehaviour:
@@ -14675,6 +14647,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+--- !u!114 &114855093167871288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281118273020438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ee6c710cd4e0640b209bc05a5638c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EndColour: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &114916029425579700
 MonoBehaviour:
   m_ObjectHideFlags: 1

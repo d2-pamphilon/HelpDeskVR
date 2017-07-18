@@ -4,57 +4,32 @@ using UnityEngine;
 
 public class UnderWater : MonoBehaviour
 {
-    public Color m_UnderwaterColour;
-    private Color m_NormalColour;
-    public float m_UnderWaterDensity;
-    private float m_NormalDensity;
-    private bool m_Underwater;
+    private Light m_Light;
 
+    private Color m_OriginalColour;
+    public Color m_EndColour;
+
+    private float m_fadetime = 0.005f;
     private DimensionTimer m_time;
-    public float m_timer;
+    private float m_timer;
 
-    // Use this for initialization
+
     void Start()
     {
-        m_Underwater = GetComponent<Dimension>().initialWorld;
-        m_UnderwaterColour = new Color(0.22f, 0.65f, 0.77f, 0.5f);
-        m_NormalColour = RenderSettings.fogColor;
-        m_NormalDensity = RenderSettings.fogDensity;
-        if (!RenderSettings.fog)
-            RenderSettings.fog = true;
-        m_time = GetComponent<DimensionTimer>();
-        m_timer = m_time.getRemainingTime();
-    }
-    
+        m_Light = GameObject.Find("UnderWaterLighting").GetComponent<Light>();
+        m_OriginalColour = m_Light.color;
 
-    // Update is called once per frame
+        m_time = GetComponent<DimensionTimer>();
+    }
+
     void Update()
     {
-        if (m_Underwater)
-            SetUnderWater();
-        else
-            SetNormal();
-
-        if ((m_timer - 1) >= m_time.getRemainingTime())
-        {
-            m_UnderWaterDensity -= 0.005f;
-            m_timer = m_time.getRemainingTime();
-        }
-        
-    }
-
-
-    void SetUnderWater()
-    {
-        RenderSettings.fogColor = m_UnderwaterColour;
-        RenderSettings.fogDensity = m_UnderWaterDensity;
-        print("underSeaFog");
-    }
-
-    void SetNormal()
-    {
-        RenderSettings.fogColor = m_NormalColour;
-        RenderSettings.fogDensity = m_NormalDensity;
+        if (m_time.elapsedTime >= 100)
+            if (m_timer <= 1)
+            {
+                m_timer += Time.deltaTime / m_fadetime;
+                m_Light.color = Color.Lerp(m_OriginalColour, m_EndColour, m_timer);
+            }
     }
 
 }
