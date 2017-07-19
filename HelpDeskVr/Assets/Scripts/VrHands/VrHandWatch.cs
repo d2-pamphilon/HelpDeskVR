@@ -11,15 +11,11 @@ public class VrHandWatch : MonoBehaviour
     public Text m_text;
     private float m_fTime;
 
-    public bool m_bInDimen; //in dimention or not
-
-
 
     // Use this for initialization
     void Start()
     {
-        
-        m_bInDimen = true;
+
     }
 
     // Update is called once per frame
@@ -27,18 +23,17 @@ public class VrHandWatch : MonoBehaviour
     {
         if(FindObjectOfType<DimensionTimer>() !=null)
         {
-            m_bInDimen = true;
-            //change watch text size here
-        }
-        else
-        {
-            m_bInDimen = false;
+           
+            m_DimensionTimer = FindObjectOfType<DimensionTimer>();
             //change watch text size here
         }
 
 
-        if (m_bInDimen)
+
+        if (!m_DimensionTimer.timeOver)
         {
+            //font size 24
+            m_text.fontSize = 24;
             int m_iTime = (int)m_DimensionTimer.getRemainingTime();
             ConvertToString(m_iTime);
 
@@ -50,13 +45,16 @@ public class VrHandWatch : MonoBehaviour
 
             if (m_iTime <= 0.0)
             {
-                m_bInDimen = false;
                 m_text.color = Color.black;
             }
         }
         else
         {
-            UpdateText(System.DateTime.Now.ToString("HH:mm:ss"));
+            UpdateText(System.DateTime.Now.ToString("HH:mm"));
+            m_text.fontSize = 15;
+
+            /*If Clock Bugs out then remove this line*/
+            m_DimensionTimer = null;
         }
     }
 
