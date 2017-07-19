@@ -51,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592beb27e297dc54d91bfc6e7b061313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumFramesForSpawningLaptop: 120
+  minimumFramesForSpawningLaptop: 60
   baseLaptopSpawnTime: 60
-  difficultyDecreaseForFailedLaptop: 0.3
-  difficultyIncreaseForFixedLaptop: 0.3
-  difficulty: 1
+  difficultyDecreaseForFailedLaptop: 0.5
+  difficultyIncreaseForFixedLaptop: 0.5
+  difficulty: 2
   mainDimension: {fileID: 0}
   mainCamera: {fileID: 0}
   cameraRig: {fileID: 0}
@@ -78,4 +78,7 @@ MonoBehaviour:
     Dimension: {fileID: 1281118273020438, guid: 3238e5caaeb9ad64198d5318610d045d,
       type: 2}
     fix: 3
+  timerDisplay: {fileID: 0}
+  LaptopsFixedDisplay: {fileID: 0}
+  LaptopsFailedDisplay: {fileID: 0}
   m_refreshTime: 0.5

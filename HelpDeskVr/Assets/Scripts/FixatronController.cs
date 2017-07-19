@@ -173,11 +173,21 @@ public class FixatronController : MonoBehaviour {
                 break;
             case STATE.Downloading:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Downloading";
-                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "";
+                string txt = "";
+                for (int i = 0; i < ((timer / timeToDownload) *24); i++)
+                {
+                    txt += "#";
+                }
+                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = txt;
                 break;
             case STATE.Installing:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Installing";
-                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "";
+                string txt2 = "";
+                for (int i = 0; i < ((timer / timeToDownload) * 24); i++)
+                {
+                    txt2 += "#";
+                }
+                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = txt2;
                 break;
             case STATE.USBReady:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Finished";

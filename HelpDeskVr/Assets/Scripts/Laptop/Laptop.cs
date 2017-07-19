@@ -79,9 +79,10 @@ public class Laptop : VRTK_InteractableObject
         }
         else
         {
-            //Laptop Fails TODO might want to change this
             dimTimer.maxTime = 0.0f;
         }
+        Destroy(e.snappedObject.gameObject);
+        currentUSB = null;
     }
 
     private void USB_DropZone_ObjectUnsnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
@@ -123,6 +124,7 @@ public class Laptop : VRTK_InteractableObject
         portal.active = false;
         canvas.transform.FindChild("BlueScreen").gameObject.active = true;
         canvas.transform.FindChild("WindowsHappy").gameObject.active = false;
+        GameManager.Instance.scoreTracker.currentScore.laptopsFailed++;
         StartCoroutine(destroyMe());
     }
 
@@ -134,6 +136,7 @@ public class Laptop : VRTK_InteractableObject
         portal.active = false;
         canvas.transform.FindChild("BlueScreen").gameObject.active = false;
         canvas.transform.FindChild("WindowsHappy").gameObject.active = true;
+        GameManager.Instance.scoreTracker.currentScore.laptopsFixed++;
         yield return new WaitForSeconds(10.0f);
         Destroy(this.gameObject);
         yield return null;

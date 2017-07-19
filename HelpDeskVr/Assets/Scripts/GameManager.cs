@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     public float minimumFramesForSpawningLaptop = 120.0f;
 
     [SerializeField]
-    float baseLaptopSpawnTime = 60.0f;
+    float baseLaptopSpawnTime = 30.0f;
 
     [SerializeField]
     [Range(0.0f, 1.0f)]
@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour {
     [Space(10, order = 3)]
 
     [SerializeField]
-    GameObject mainDimension;
+    public GameObject mainDimension;
     [SerializeField]
-    Camera mainCamera;
+    public Camera mainCamera;
     [SerializeField]
     GameObject cameraRig;
     [SerializeField]
@@ -55,6 +55,14 @@ public class GameManager : MonoBehaviour {
     public LaptopDimension[] laptopsPrefabs;
     [SerializeField]
     public ScoreTracker scoreTracker;
+
+    [SerializeField]
+    Display7SegTimeSetter timerDisplay;
+    [SerializeField]
+    ContainerDisplay7Seg LaptopsFixedDisplay;
+    [SerializeField]
+    ContainerDisplay7Seg LaptopsFailedDisplay;
+
 
     public Dictionary<GameObject, GameObject> createdDimensions;
 
@@ -97,6 +105,12 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        LaptopsFailedDisplay.text = scoreTracker.currentScore.laptopsFailed.ToString("000");
+        LaptopsFixedDisplay.text = scoreTracker.currentScore.laptopsFixed.ToString("000");
+        float timeOutOf500 = (mainDimension.GetComponent<DimensionTimer>().elapsedTime / mainDimension.GetComponent<DimensionTimer>().maxTime) * 500.0f;
+        timerDisplay.Hours = ((int)(timeOutOf500 + 1000)) / 100;
+        timerDisplay.Minutes = (int)((((timeOutOf500) % 100) / 99) * 59);
 
         if (mainDimension.GetComponent<DimensionTimer>().timeOver)
         {
@@ -240,7 +254,8 @@ public class GameManager : MonoBehaviour {
             DimensionChanger.SwitchDimensions(Laptop, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
         }
         Destroy(createdDimensions[Laptop]);
-        scoreTracker.currentScore.laptopsFixed++;
+        createdDimensions.Remove(Laptop);
+        //scoreTracker.currentScore.laptopsFixed++;
         difficulty = Mathf.Min(4.0f, difficulty + difficultyIncreaseForFixedLaptop);
     }
 }

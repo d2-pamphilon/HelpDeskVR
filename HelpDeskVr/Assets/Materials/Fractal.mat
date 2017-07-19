@@ -147,7 +147,7 @@ Material:
       second: 0
     - first:
         name: greenFormula
-      second: 1
+      second: 10
     - first:
         name: greenMultiplier
       second: 1
@@ -168,7 +168,7 @@ Material:
       second: 0
     - first:
         name: redFormula
-      second: 1
+      second: 11
     - first:
         name: redMultiplier
       second: 1

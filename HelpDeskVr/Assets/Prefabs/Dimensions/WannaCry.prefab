@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fc569012251441a8fdc196d69ae63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customSkybox: {fileID: 0}
+  customSkybox: {fileID: 2100000, guid: fa756b232992781448908e45ad28eece, type: 2}
   layer: 0
   initialWorld: 0
   connectedPortals: []

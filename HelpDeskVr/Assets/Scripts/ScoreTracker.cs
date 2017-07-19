@@ -60,6 +60,11 @@ public class ScoreTracker {
 
     string fileName = "Leaderboard.txt";
 
+    public ScoreTracker()
+    {
+        currentScore = new Score();
+    }
+
     public void saveData()
     {
         var file = File.CreateText(fileName);

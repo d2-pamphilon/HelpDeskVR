@@ -30,10 +30,10 @@ Material:
       second: 0.00002
     - first:
         name: centreX
-      second: 0
+      second: -0.24456969
     - first:
         name: centreY
-      second: 0
+      second: -1.178553
     - first:
         name: convergenceThreshold
       second: 4
@@ -72,7 +72,7 @@ Material:
       second: 0.00002
     - first:
         name: scale
-      second: 5.264025
+      second: 6.2435327
     - first:
         name: smoothing
       second: 0
