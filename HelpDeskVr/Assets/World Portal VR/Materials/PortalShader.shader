@@ -37,7 +37,9 @@ Shader "Portals/PortalShader"
 				half4 vertex : POSITION;
 				fixed3 normal : NORMAL;
 				half4 texCoord : TEXCOORD0;
+				Cull Back
 			};
+
 
 			struct vertexOutput {
 				half4 pos : SV_POSITION;
