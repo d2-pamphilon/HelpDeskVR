@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3f6a040eabf9a804ab3d9bcf1674ef55
-timeCreated: 1497695765
+guid: ab13662e580538b44b93c8b25b052b7c
+timeCreated: 1500608721
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -80,9 +80,9 @@ ModelImporter:
     100144: Line55
     100146: Line56
     100148: Line57
-    100150: Object01
-    100152: standard
-    100154: //RootNode
+    100150: //RootNode
+    100152: Object01
+    100154: standard
     400000: airler
     400002: airler01
     400004: airler02
@@ -158,9 +158,9 @@ ModelImporter:
     400144: Line55
     400146: Line56
     400148: Line57
-    400150: Object01
-    400152: standard
-    400154: //RootNode
+    400150: //RootNode
+    400152: Object01
+    400154: standard
     2300000: Box01
     2300002: Box02
     2300004: Box03
@@ -371,7 +371,6 @@ ModelImporter:
     4300134: Box06
     4300136: Object01
     4300138: Cylinder01
-    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -434,7 +433,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

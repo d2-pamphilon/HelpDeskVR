@@ -226,7 +226,7 @@ public class Portal : MonoBehaviour
 		CameraExtensions.LayerCullingShow (portalCamera, ToDimension ().layer);
 		CameraExtensions.LayerCullingShowMask (portalCamera, alwaysVisibleMask);
 
-		portalCamera.Render ();
+		portalCamera.Render();
 	}
 
 	// Creates a clip plane for the projection matrix that clips to the portal.

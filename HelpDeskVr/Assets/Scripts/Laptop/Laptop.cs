@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK;
 
 public class Laptop : VRTK_InteractableObject
@@ -25,6 +26,20 @@ public class Laptop : VRTK_InteractableObject
 
     [SerializeField]
     GameObject canvas;
+
+    [SerializeField]
+    Text timerText;
+
+    protected override void Update()
+    {
+        base.Update();
+
+        int timeLeft = (int)(dimTimer.maxTime - dimTimer.elapsedTime);
+        int mins = timeLeft / 60;
+        int secs = timeLeft % 60;
+
+        timerText.text = mins.ToString("00") + ":" + secs.ToString("00");
+    }
 
     public override void Grabbed(GameObject currentGrabbingObject)
     {
@@ -90,10 +105,6 @@ public class Laptop : VRTK_InteractableObject
         currentUSB = null;
     }
 
-    protected override void Update()
-    {
-        base.Update();
-    }
     
     IEnumerator OpenMonitor()
     {
