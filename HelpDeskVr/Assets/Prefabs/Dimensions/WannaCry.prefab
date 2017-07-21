@@ -178,6 +178,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1261348498742250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4688895607673340}
+  - component: {fileID: 33754652199895952}
+  - component: {fileID: 23123536773379552}
+  m_Layer: 0
+  m_Name: Flipped Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1265400218270802
 GameObject:
   m_ObjectHideFlags: 1
@@ -477,6 +494,8 @@ GameObject:
   - component: {fileID: 33065442479865268}
   - component: {fileID: 23977293550702660}
   - component: {fileID: 114419465906661572}
+  - component: {fileID: 82396606803288076}
+  - component: {fileID: 114221831768639580}
   m_Layer: 0
   m_Name: BabyHeadOld
   m_TagString: Untagged
@@ -678,6 +697,7 @@ Transform:
   - {fileID: 4420661227549714}
   - {fileID: 4549299868426852}
   - {fileID: 4454690225809042}
+  - {fileID: 4688895607673340}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -876,6 +896,19 @@ Transform:
   m_Father: {fileID: 4137660443319716}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 45, y: -45, z: 0}
+--- !u!4 &4688895607673340
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261348498742250}
+  m_LocalRotation: {x: -0.6828769, y: -0, z: -0, w: -0.73053354}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 63.53485, y: 63.534958, z: 63.534958}
+  m_Children: []
+  m_Father: {fileID: 4300474140017144}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -273.862, y: 0, z: 0}
 --- !u!4 &4714448539485272
 Transform:
   m_ObjectHideFlags: 1
@@ -980,6 +1013,37 @@ Transform:
   m_Father: {fileID: 4137660443319716}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: -45}
+--- !u!23 &23123536773379552
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261348498742250}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8afe75a3c72efc443ba7895a1818b2ef, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23234667737740004
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1094,6 +1158,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710798479532204}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33754652199895952
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261348498742250}
+  m_Mesh: {fileID: 4300000, guid: c79092cca0dd10043a3b72b4bc6bf015, type: 3}
 --- !u!65 &65491912172645278
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1118,6 +1189,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82396606803288076
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957861604692410}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108053184853985068
 Light:
   m_ObjectHideFlags: 1
@@ -1128,7 +1279,7 @@ Light:
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 0.97794116, g: 0, b: 0, a: 1}
-  m_Intensity: 2.95
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1152,6 +1303,74 @@ Light:
   m_BounceIntensity: 1.34
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114221831768639580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957861604692410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6947f908f74da4fb34e744ecb3fca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Screams:
+  - {fileID: 8300000, guid: 42230f4edbef5a44ea59a6e5094700b2, type: 3}
+  - {fileID: 8300000, guid: b2c84d90d4d2b5149bd8305ef8d0a02f, type: 3}
+  - {fileID: 8300000, guid: 61d32685dae92b748a1dd2eecb94e777, type: 3}
+  - {fileID: 8300000, guid: 3e86cffdf142a8246a9542ee8eaeb50a, type: 3}
+  - {fileID: 8300000, guid: b86e471c36779c144b3c83a346aacb9c, type: 3}
+  - {fileID: 8300000, guid: 0d3d51e68ed6d5b4093483ea53abf3d7, type: 3}
+  - {fileID: 8300000, guid: 89689ceb18361ae4bac60d78166da654, type: 3}
+  - {fileID: 8300000, guid: e9bde03749862de47bc6b300d71b15bf, type: 3}
+  - {fileID: 8300000, guid: 6939a10708a2c4b428c4dae9736db3ff, type: 3}
+  - {fileID: 8300000, guid: 84ec134ae32a52c4ea2cb000623d092e, type: 3}
+  - {fileID: 8300000, guid: dc9199c5f8a67e6469c21f6eac72b289, type: 3}
+  - {fileID: 8300000, guid: ee962592017f153448661466a50d2a02, type: 3}
+  - {fileID: 8300000, guid: 19fcb31b130e35a46bec98d5085562d5, type: 3}
+  - {fileID: 8300000, guid: 38b6a6c2b6aef494db59ec8eaba5cbe1, type: 3}
+  - {fileID: 8300000, guid: 18da31bd24939654096abb513f55e065, type: 3}
+  - {fileID: 8300000, guid: c90991e298b511b4eb634dbd7fd30569, type: 3}
+  - {fileID: 8300000, guid: 736f8661863cfee4e9ba6249ef71ef19, type: 3}
+  - {fileID: 8300000, guid: 670022c6892417e4d8ca221f7513d4bb, type: 3}
+  - {fileID: 8300000, guid: d77e355392994dc46a1e7e011fed132a, type: 3}
+  - {fileID: 8300000, guid: 47810d124f21899488bda50e34f2e28e, type: 3}
+  - {fileID: 8300000, guid: 47810d124f21899488bda50e34f2e28e, type: 3}
+  - {fileID: 8300000, guid: 68c357de36507904c92643e410f2bd81, type: 3}
+  - {fileID: 8300000, guid: 2ce8c03fe55fb274bbd8437ecfba825f, type: 3}
+  - {fileID: 8300000, guid: 854676741fa933b45a709ac5ad38cc6e, type: 3}
+  - {fileID: 8300000, guid: 24649b0d24e72b443868bf70bead0733, type: 3}
+  - {fileID: 8300000, guid: bebe8e81452b820438bc326ef4b6a2a7, type: 3}
+  - {fileID: 8300000, guid: 56d3d4b3bd7bfdf44b8259a73be5ae0f, type: 3}
+  - {fileID: 8300000, guid: 458be823858fe4546a127da0acf4beed, type: 3}
+  - {fileID: 8300000, guid: 3979cf778f929994488b1eb58cb13bd3, type: 3}
+  - {fileID: 8300000, guid: a7981b99ff202b44f80dd31e95e8a139, type: 3}
+  - {fileID: 8300000, guid: ce47f33ce9538594cb5e21baacd6f22f, type: 3}
+  - {fileID: 8300000, guid: 73e739a8dea1ab04285d38f0bb8858db, type: 3}
+  - {fileID: 8300000, guid: b7dadd8e74d7c4c4dbe5b8d87f6af71c, type: 3}
+  - {fileID: 8300000, guid: 49a66d516f66ac140a8c9dd24a9b6d54, type: 3}
+  - {fileID: 8300000, guid: 46f72db1ae1c4da449fc557227968732, type: 3}
+  - {fileID: 8300000, guid: e0475d2bbb2860343b73f81f7852b8cc, type: 3}
+  - {fileID: 8300000, guid: a35b08980b2814f42b8013e296077729, type: 3}
+  - {fileID: 8300000, guid: 74384014fe663ac41a200ec4537b32c0, type: 3}
+  - {fileID: 8300000, guid: 63522aa16f8988348a61d5db7259be71, type: 3}
+  - {fileID: 8300000, guid: afb778a3de13a5141880cc854f5465b3, type: 3}
+  - {fileID: 8300000, guid: 2d98d0be9a88b6444bef4393aa5869b8, type: 3}
+  - {fileID: 8300000, guid: 2c49471937b68e549b98836dd0de9805, type: 3}
+  - {fileID: 8300000, guid: 030efcbc5d205ef4cb865045341e05af, type: 3}
+  - {fileID: 8300000, guid: a25f979e8dbd85549a1edb420ec1da52, type: 3}
+  - {fileID: 8300000, guid: 991d018893d6ec74aa835682f15cdce4, type: 3}
+  - {fileID: 8300000, guid: 5620eefea471f4749807630e090d0820, type: 3}
+  - {fileID: 8300000, guid: e0dc1a893b87fb048b628f874ea57a8c, type: 3}
+  - {fileID: 8300000, guid: 928f745570190c64ca9c2aac666cdf92, type: 3}
+  - {fileID: 8300000, guid: 34fed59ceff2eac4694bfb03aa7bbe4d, type: 3}
+  - {fileID: 8300000, guid: 470ed55bdb8349446979ee19f68ab680, type: 3}
+  - {fileID: 8300000, guid: 9561c604872fa7449a83efb5033bff5f, type: 3}
+  - {fileID: 8300000, guid: 18e776f2c13ec3e4fb5c05c302d3a7e1, type: 3}
+  - {fileID: 8300000, guid: 0bc9962635993b1479b613fc6aeffb1a, type: 3}
+  - {fileID: 8300000, guid: b53e69a5dd5db4e4c89b042fee1d44e8, type: 3}
+  ScreamWaitTime: 5
+  timer: 0
 --- !u!114 &114419465906661572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1175,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fc569012251441a8fdc196d69ae63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customSkybox: {fileID: 2100000, guid: fa756b232992781448908e45ad28eece, type: 2}
+  customSkybox: {fileID: 2100000, guid: 8afe75a3c72efc443ba7895a1818b2ef, type: 2}
   layer: 0
   initialWorld: 0
   connectedPortals: []

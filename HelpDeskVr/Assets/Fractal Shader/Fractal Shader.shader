@@ -42,7 +42,7 @@
     }
 
     SubShader {
-        ZTest Always
+        //ZTest Always
         Pass {  
             CGPROGRAM
                 #pragma vertex vertexShader

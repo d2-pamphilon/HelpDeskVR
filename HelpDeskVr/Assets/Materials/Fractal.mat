@@ -120,34 +120,34 @@ Material:
       second: 1
     - first:
         name: backgroundColourAmount
-      second: 0.317
+      second: 0.448
     - first:
         name: blueFixedValue
       second: 0
     - first:
         name: blueFormula
-      second: 12
+      second: 0
     - first:
         name: blueMultiplier
-      second: 1
+      second: 7
     - first:
         name: centreX
-      second: -0.3781595
+      second: -0.7873256
     - first:
         name: centreY
-      second: 0.31755197
+      second: 0.16475454
     - first:
         name: convergenceThreshold
-      second: 5.03
+      second: 4
     - first:
         name: fractalType
-      second: 1
+      second: 0
     - first:
         name: greenFixedValue
       second: 0
     - first:
         name: greenFormula
-      second: 10
+      second: 1
     - first:
         name: greenMultiplier
       second: 1
@@ -168,13 +168,13 @@ Material:
       second: 0
     - first:
         name: redFormula
-      second: 11
+      second: 1
     - first:
         name: redMultiplier
       second: 1
     - first:
         name: scale
-      second: 0.1329812
+      second: 0.0023824137
     - first:
         name: smoothing
       second: 1
@@ -187,4 +187,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: backgroundColour
-      second: {r: 0.86612594, g: 0.029411793, b: 1, a: 1}
+      second: {r: 1, g: 0, b: 0, a: 1}

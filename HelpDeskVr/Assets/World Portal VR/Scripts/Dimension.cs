@@ -51,11 +51,15 @@ public class Dimension : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Light[] lights = FindObjectsOfType<Light>();
+        foreach (Light l in lights)
+        {
+            l.cullingMask = 1 << l.gameObject.layer;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

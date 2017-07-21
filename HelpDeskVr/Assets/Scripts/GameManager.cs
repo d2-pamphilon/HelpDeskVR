@@ -206,11 +206,11 @@ public class GameManager : MonoBehaviour {
         portal.dimensionChanging.Add(laptop);
 
 
-        Light[] lights = FindObjectsOfType<Light>();
-        foreach (Light l in lights)
-        {
-            l.enabled = l.gameObject.layer == cameraRig.layer;
-        }
+        //Light[] lights = FindObjectsOfType<Light>();
+        //foreach (Light l in lights)
+        //{
+        //    l.enabled = l.gameObject.layer == cameraRig.layer;
+        //}
 
         AudioSource[] sounds = FindObjectsOfType<AudioSource>();
         foreach (AudioSource s in sounds)

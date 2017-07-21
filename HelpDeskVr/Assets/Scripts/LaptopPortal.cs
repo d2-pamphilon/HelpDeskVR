@@ -13,11 +13,11 @@ public class LaptopPortal : Portal {
         {
             DimensionChanger.SwitchDimensions(go, FromDimension(), ToDimension());
         }
-        Light[] lights = FindObjectsOfType<Light>();
-        foreach (Light l in lights)
-        {
-            l.enabled = l.gameObject.layer == ToDimension().layer;
-        }
+        //Light[] lights = FindObjectsOfType<Light>();
+        //foreach (Light l in lights)
+        //{
+        //    l.enabled = l.gameObject.layer == ToDimension().layer;
+        //}
 
         AudioSource[] sounds = FindObjectsOfType<AudioSource>();
         foreach (AudioSource s in sounds)
