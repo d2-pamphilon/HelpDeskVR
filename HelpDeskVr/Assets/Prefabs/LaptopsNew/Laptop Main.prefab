@@ -1457,7 +1457,7 @@ MonoBehaviour:
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 114276769959924360}
   secondaryGrabActionScript: {fileID: 114927557376954692}
-  isUsable: 1
+  isUsable: 0
   holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
