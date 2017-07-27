@@ -52,22 +52,37 @@ public class ScoreComparer : IComparer<Score>
     }
 }
 
-public class ScoreTracker {
+public class ScoreTracker : MonoBehaviour {
 
     public Score currentScore;
 
-    public List<Score> scores; 
+    static string fileName = "Leaderboard.txt";
 
-    string fileName = "Leaderboard.txt";
-
-    public ScoreTracker()
+    void Start()
     {
         currentScore = new Score();
     }
 
+    public void SetName( string name)
+    {
+        currentScore.playerName = name;
+        saveData();
+        Application.LoadLevel(3);
+    }
+
     public void saveData()
     {
+        var scores = loadData();
+
         var file = File.CreateText(fileName);
+
+        foreach (Score score in scores)
+        {
+            file.WriteLine(score.playerName);
+            file.WriteLine("{0}", score.laptopsFixed);
+            file.WriteLine("{0}", score.laptopsFailed);
+        }
+
         file.WriteLine(currentScore.playerName);
         file.WriteLine("{0}", currentScore.laptopsFixed);
         file.WriteLine("{0}", currentScore.laptopsFailed);
@@ -75,9 +90,9 @@ public class ScoreTracker {
         return;
     }
 
-    public void loadData()
+    static public List<Score> loadData()
     {
-        scores = new List<Score>();
+        var scores = new List<Score>();
         if (File.Exists(fileName))
         {
             var file = File.OpenText(fileName);
@@ -86,7 +101,7 @@ public class ScoreTracker {
             {
                 Score score = new Score();
                 score.playerName = file.ReadLine();
-                if (score.playerName == "")
+                if (score.playerName == null)
                 {
                     finished = true;
                     break;
@@ -97,6 +112,6 @@ public class ScoreTracker {
             }
             file.Close();
         }
-        return;
+        return scores;
     }
 }

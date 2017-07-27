@@ -30,6 +30,9 @@ public class Laptop : VRTK_InteractableObject
     [SerializeField]
     Text timerText;
 
+    [SerializeField]
+    GameObject smoke;
+
     protected override void Update()
     {
         base.Update();
@@ -149,6 +152,7 @@ public class Laptop : VRTK_InteractableObject
         canvas.transform.FindChild("WindowsHappy").gameObject.active = true;
         GameManager.Instance.scoreTracker.currentScore.laptopsFixed++;
         yield return new WaitForSeconds(10.0f);
+        Instantiate(smoke, this.transform.position, this.transform.rotation, this.transform.parent);
         Destroy(this.gameObject);
         yield return null;
     }
@@ -158,6 +162,7 @@ public class Laptop : VRTK_InteractableObject
         GameManager.Instance.createdDimensions.Remove(this.gameObject);
         yield return new WaitForSeconds(10.0f);
         //create particles of destruction
+        Instantiate(smoke, this.transform.position, this.transform.rotation, this.transform.parent);
         Destroy(this.gameObject);
         yield return null;
     }

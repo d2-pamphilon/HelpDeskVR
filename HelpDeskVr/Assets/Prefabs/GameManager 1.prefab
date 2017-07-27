@@ -78,6 +78,7 @@ MonoBehaviour:
     Dimension: {fileID: 1281118273020438, guid: 3238e5caaeb9ad64198d5318610d045d,
       type: 2}
     fix: 3
+  scoreTracker: {fileID: 0}
   timerDisplay: {fileID: 0}
   LaptopsFixedDisplay: {fileID: 0}
   LaptopsFailedDisplay: {fileID: 0}

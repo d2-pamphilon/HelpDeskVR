@@ -81,18 +81,21 @@ public class Flock : MonoBehaviour
         {
             if (go != this.gameObject)
             {
-                m_Distance = Vector3.Distance(go.transform.position, this.transform.position);
-
-                if (m_Distance <= m_NeighbourDistance)
+                if (go != null)
                 {
-                    m_Center += go.transform.position;
-                    m_GroupSize++;
+                    m_Distance = Vector3.Distance(go.transform.position, this.transform.position);
 
-                    if (m_Distance < 2.0f)
-                        m_Avoid += (this.transform.position - go.transform.position);
+                    if (m_Distance <= m_NeighbourDistance)
+                    {
+                        m_Center += go.transform.position;
+                        m_GroupSize++;
 
-                    Flock m_anotherFlock = go.GetComponent<Flock>();
-                    m_GroupSpeed += m_anotherFlock.m_speed;
+                        if (m_Distance < 2.0f)
+                            m_Avoid += (this.transform.position - go.transform.position);
+
+                        Flock m_anotherFlock = go.GetComponent<Flock>();
+                        m_GroupSpeed += m_anotherFlock.m_speed;
+                    }
                 }
             }
         }

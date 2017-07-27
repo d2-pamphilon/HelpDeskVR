@@ -5,10 +5,15 @@ using UnityEngine;
 public class BoatMovement : MonoBehaviour {
 
     public float speed = 1;
-	
+    
+    void Start()
+    {
+        Destroy(gameObject, 100);
+    }
+    	
 	// Update is called once per frame
 	void Update () {
-        transform.position += (Vector3.left * speed); ;
-        Destroy(gameObject, 10f);
+        transform.position += (Vector3.left * speed);
+       
 	}
 }

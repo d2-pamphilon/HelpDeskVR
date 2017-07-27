@@ -27,7 +27,10 @@ public class ScreamMng : MonoBehaviour {
         {
             timer = 0;
             AS.clip = Screams[Random.Range(0, Screams.Length)];
-            AS.Play();
+            if (AS.isActiveAndEnabled)
+            {
+                AS.Play();
+            }
         }
 
 	}

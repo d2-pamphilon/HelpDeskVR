@@ -100,11 +100,23 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         createdDimensions = new Dictionary<GameObject, GameObject>();
-        scoreTracker = new ScoreTracker();
+        //scoreTracker = new ScoreTracker();
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        foreach(var obj in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            if (obj.gameObject.layer == cameraRig.gameObject.layer)
+            {
+                obj.mute = false;
+            }
+            else
+            {
+                obj.mute = true;
+            }
+        }
 
         LaptopsFailedDisplay.text = scoreTracker.currentScore.laptopsFailed.ToString("000");
         LaptopsFixedDisplay.text = scoreTracker.currentScore.laptopsFixed.ToString("000");
@@ -114,8 +126,9 @@ public class GameManager : MonoBehaviour {
 
         if (mainDimension.GetComponent<DimensionTimer>().timeOver)
         {
-            scoreTracker.saveData();
+            //scoreTracker.saveData();
             Application.LoadLevel(2);
+            //scoreTracker.GetComponent<ScoreNameSetter>().SetName();
             Destroy(this.gameObject);
         }
 

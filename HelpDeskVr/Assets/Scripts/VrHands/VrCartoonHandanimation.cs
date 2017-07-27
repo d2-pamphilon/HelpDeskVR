@@ -147,9 +147,9 @@ public class VrCartoonHandanimation : MonoBehaviour
     {
         print("Natural");
         m_animation.SetTrigger(Natural);
-        for (int i = 0; i < m_handCollision.Count; i++)
+        foreach (var a in gameObject.GetComponentsInChildren<VrHandCollision>())
         {
-            m_handCollision[i].IsActive(false);
+            a.IsActive(false);
         }
     }
 

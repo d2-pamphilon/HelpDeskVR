@@ -8,7 +8,7 @@ public class VrHandCollision : MonoBehaviour {
 	public void IsActive(bool _b)
     {
         //gameObject.SetActive(_b);
-        gameObject.GetComponent<SphereCollider>().enabled = !gameObject.GetComponent<SphereCollider>().enabled;
+        gameObject.GetComponent<SphereCollider>().enabled = _b;
     }
 
     public void SetBool(bool _b)

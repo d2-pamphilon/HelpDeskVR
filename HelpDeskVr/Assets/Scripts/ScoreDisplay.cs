@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
 public class ScoreDisplay : MonoBehaviour {
 
-    ScoreTracker tracker;
     [SerializeField]
     int NumberOfScoresToShow;
 
+    [SerializeField]
+    Text playerNames;
+
+    [SerializeField]
+    Text LaptopsFixedColumn;
+
+    [SerializeField]
+    Text LaptopsFailedColumn;
+
 	// Use this for initialization
 	void Start () {
-        tracker = new ScoreTracker();
-        tracker.loadData();
-        Text txt = GetComponent<Text>();
-        tracker.scores.Sort(new ScoreComparer());
-        txt.text = "\t Player \t Laptops Fixed \t Laptops Failed \n";
-        for (int i = 0; i < NumberOfScoresToShow && i < tracker.scores.Count; i++ )
+        var scores = ScoreTracker.loadData();
+        scores.Sort(new ScoreComparer());
+        for (int i = 0; i < NumberOfScoresToShow && i < scores.Count; i++ )
         {
-            txt.text += i + ") \t" + tracker.scores[i].ToString();
+            playerNames.text += "" + scores[i].playerName + "\n";
+            LaptopsFixedColumn.text += "" + scores[i].laptopsFixed + "\n";
+            LaptopsFailedColumn.text += "" + scores[i].laptopsFailed + "\n";
         }
 	}
 
