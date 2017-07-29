@@ -28,7 +28,8 @@ public class LaptopPortal : Portal {
         ParticleSystem[] particle = FindObjectsOfType<ParticleSystem>();
         foreach (ParticleSystem p in particle)
         {
-            p.enableEmission = p.gameObject.layer == ToDimension().layer;
+            var em = p.emission;
+            em.enabled = p.gameObject.layer == ToDimension().layer;
         }
 
         base.SwitchDimensions();

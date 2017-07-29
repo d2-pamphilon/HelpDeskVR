@@ -5,9 +5,9 @@ using UnityEngine;
 public class VRHands : MonoBehaviour
 {
 
-    Animator m_anim;
-    int Idle = Animator.StringToHash("Idle");
-    int GrabLarge = Animator.StringToHash("GrabLarge");
+    //Animator m_anim;
+    //int Idle = Animator.StringToHash("Idle");
+    //int GrabLarge = Animator.StringToHash("GrabLarge");
 
     public SteamVR_TrackedObject m_trackedObject;
     public SteamVR_Controller.Device m_device;
@@ -17,7 +17,7 @@ public class VRHands : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_anim = GetComponent<Animator>();
+        //m_anim = GetComponent<Animator>();
 
         m_trackedObject = GetComponent<SteamVR_TrackedObject>();
 

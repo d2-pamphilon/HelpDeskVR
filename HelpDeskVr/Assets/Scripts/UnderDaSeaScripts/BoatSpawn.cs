@@ -15,7 +15,7 @@ public class BoatSpawn : MonoBehaviour
 
     void Start()
     {
-        randFloat = Random.RandomRange(minTime, maxTime);
+        randFloat = Random.Range(minTime, maxTime);
     }
 
         // Update is called once per frame
@@ -25,7 +25,7 @@ public class BoatSpawn : MonoBehaviour
         if (m_time >= randFloat)
         {
             m_time = 0;
-            randFloat = Random.RandomRange(minTime, maxTime);
+            randFloat = Random.Range(minTime, maxTime);
             spawloc = Random.Range(-10, 50);
             GameObject t_GO = Instantiate(m_boat, new Vector3(transform.position.x, transform.position.y, spawloc), Quaternion.identity, gameObject.transform);
             t_GO.layer = gameObject.layer;

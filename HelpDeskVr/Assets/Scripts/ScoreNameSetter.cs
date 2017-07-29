@@ -19,7 +19,6 @@ public class ScoreNameSetter : MonoBehaviour {
 
     public void SetName()
     {
-        var instance = Instantiate(scoreInput);
-        //
+        Instantiate(scoreInput);
     }
 }

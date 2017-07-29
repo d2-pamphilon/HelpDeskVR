@@ -55,11 +55,11 @@ public class PasswordsSpawner : MonoBehaviour {
     private void CreatePassword(int index)
     {
         GameObject newPass = Instantiate(passwordPrefab);
-        TextMesh txt = newPass.GetComponent<TextMesh>();
+        var txt = newPass.GetComponent<TMPro.TextMeshPro>();
         txt.text = passwords[index];
         txt.color = Random.ColorHSV();
         txt.fontSize = Random.Range(minTextSize, maxTextSize);
-        txt.fontStyle = (FontStyle)(Random.Range(0, 4));
+        //txt.fontStyle = (FontStyle)(Random.Range(0, 4));
         Vector3 dir = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
         dir.Normalize();
         dir *= Random.Range(minRadius, maxRadius);

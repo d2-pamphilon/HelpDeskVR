@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class RandomPlaySound : MonoBehaviour {
 
-    AudioSource audio;
+    AudioSource sound;
     [SerializeField]
     [Range(0.0f, 1.0f)]
     float likelyhood = 0.1f;
 
 	// Use this for initialization
 	void Start () {
-        audio = GetComponent<AudioSource>();	
+        sound = GetComponent<AudioSource>();	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Random.value < likelyhood && !audio.isPlaying)
+        if (Random.value < likelyhood && !sound.isPlaying)
         {
-            audio.Play();
+            if (sound.isActiveAndEnabled)
+                sound.Play();
         }
 	}
 }

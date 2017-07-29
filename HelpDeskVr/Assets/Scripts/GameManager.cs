@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct LaptopDimension
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour {
         if (mainDimension.GetComponent<DimensionTimer>().timeOver)
         {
             //scoreTracker.saveData();
-            Application.LoadLevel(2);
+            SceneManager.LoadScene(2);
             //scoreTracker.GetComponent<ScoreNameSetter>().SetName();
             Destroy(this.gameObject);
         }
@@ -234,7 +235,8 @@ public class GameManager : MonoBehaviour {
         ParticleSystem[] particle = FindObjectsOfType<ParticleSystem>();
         foreach (ParticleSystem p in particle)
         {
-            p.enableEmission = p.gameObject.layer == cameraRig.layer;
+            ParticleSystem.EmissionModule em = p.emission;
+            em.enabled = p.gameObject.layer == cameraRig.layer;
         }
 
         createdDimensions.Add(laptop, dim);

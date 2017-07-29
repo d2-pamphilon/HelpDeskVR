@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
 public class AutoAddScript : MonoBehaviour
@@ -44,7 +44,7 @@ public class AutoAddScript : MonoBehaviour
 
                 //EditorUtility.ReplacePrefab(m_PrefabGameobject, m_PrefabGameobject);
 
-                PrefabUtility.ReplacePrefab(m_PrefabGameobject, Resources.Load(f.Extension), ReplacePrefabOptions.ReplaceNameBased);
+                //PrefabUtility.ReplacePrefab(m_PrefabGameobject, Resources.Load(f.Extension), ReplacePrefabOptions.ReplaceNameBased);
             }
         }
 
@@ -67,9 +67,9 @@ public class AutoAddScript : MonoBehaviour
 
                 //  m_PrefabGameobject[i].AddComponent<Rigidbody>();
 
-                print(PrefabUtility.GetPrefabType(GameObject.Find(_name)));
+                //print(PrefabUtility.GetPrefabType(GameObject.Find(_name)));
 
-                PrefabUtility.ReplacePrefab(m_prefabOb, GameObject.Find(_name)); //, ReplacePrefabOptions.Default);
+                //PrefabUtility.ReplacePrefab(m_prefabOb, GameObject.Find(_name)); //, ReplacePrefabOptions.Default);
                                                                                  //PrefabUtility.MergeAllPrefabInstances(m_PrefabGameobject[i]);
             }
         }

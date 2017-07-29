@@ -10,13 +10,19 @@ public class PasswordMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        GetComponent<Rigidbody>().AddForce(new Vector3(Random.value, Random.value, Random.value));
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
+        if (transform.localScale.x < 0.01f)
+        {
+            var ls = transform.localScale;
+            ls.x += transform.localScale.x * 0.1f;
+            ls.y += transform.localScale.y * 0.1f;
+        }
+        //GetComponent<Rigidbody>().AddForce(new Vector3(Random.value/100.0f, Random.value / 100.0f, Random.value / 100.0f));
         //Vector3 heading = centerPoint.position - transform.position;
-        transform.LookAt(transform.position - (centerPoint.position - transform.position));
-	}
+        //transform.LookAt(transform.position - (GameManager.Instance.mainCamera.transform.position - transform.position));
+    }
 }

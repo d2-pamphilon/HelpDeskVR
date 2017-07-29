@@ -3691,8 +3691,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4239860798089786}
   - component: {fileID: 33981590059811264}
-  - component: {fileID: 64747575839706632}
   - component: {fileID: 23737745450074766}
+  - component: {fileID: 65486655509680852}
   m_Layer: 30
   m_Name: Floor
   m_TagString: Untagged
@@ -14042,20 +14042,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 8ed862a8eb5964d4b9d345b24d9e5361, type: 3}
---- !u!64 &64747575839706632
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1811524484969490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64771997022250604
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -14530,6 +14516,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65486655509680852
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811524484969490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 27.476501, z: 10}
+  m_Center: {x: 0, y: -13.738251, z: 0}
 --- !u!82 &82025408323683104
 AudioSource:
   m_ObjectHideFlags: 1
@@ -14619,7 +14617,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 46b8c31f2f4c1ee4cb49d975ef1140bf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9c94cb058676e6847aa21e2881f27782, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.174
   m_Pitch: 1

@@ -22,6 +22,7 @@
 
         private void HandleChange(object sender, Control3DEventArgs e)
         {
+            if (go)
             go.text = e.value.ToString() + "(" + e.normalizedValue.ToString() + "%)";
         }
     }

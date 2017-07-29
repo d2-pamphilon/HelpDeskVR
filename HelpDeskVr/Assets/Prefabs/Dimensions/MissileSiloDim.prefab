@@ -1171,7 +1171,6 @@ GameObject:
   - component: {fileID: 33237139908636928}
   - component: {fileID: 64259371079387942}
   - component: {fileID: 23518620212211994}
-  - component: {fileID: 114316011423442794}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -14734,7 +14733,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 938254a0b8f3b584087282763fa952ea, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23269,17 +23268,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114316011423442794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1205639630119414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79c20aab2428c4d46a5e85464b99d1ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114322132711277580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24649,7 +24637,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1174852719
+  randomSeed: 538357981
   InitialModule:
     serializedVersion: 3
     enabled: 1

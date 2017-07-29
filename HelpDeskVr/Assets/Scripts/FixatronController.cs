@@ -51,6 +51,23 @@ public class FixatronController : MonoBehaviour {
     [SerializeField]
     GameObject USBMonitor;
 
+    [Header("SoudEffects")]
+    [SerializeField]
+    AudioSource[] speakers;
+
+    [SerializeField]
+    AudioClip startDownload;
+    [SerializeField]
+    AudioClip startInstall;
+    [SerializeField]
+    AudioClip finishedInstall;
+    [SerializeField]
+    AudioClip error;
+    [SerializeField]
+    AudioClip errorRealBad;
+    [SerializeField]
+    AudioClip acceptedUSB;
+
     protected USB_PROGRAM currentProgram;
     private STATE currentState;
 
@@ -68,9 +85,20 @@ public class FixatronController : MonoBehaviour {
         updateMonitors();
     }
 
+    private void setClipAndPlay(AudioClip _clip)
+    {
+        foreach (var speaker in speakers)
+        {
+            speaker.clip = _clip;
+            if (speaker.isActiveAndEnabled)
+            speaker.Play();
+        }
+    }
+
     private void USB_DropZone_ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
     {
         currentUSBs.Add(e.snappedObject);
+        setClipAndPlay(acceptedUSB);
         if (currentProgram != USB_PROGRAM.NONE)
         {
             currentState = STATE.WaitingToDownload;
@@ -88,11 +116,13 @@ public class FixatronController : MonoBehaviour {
         {
             e.snappedObject.GetComponent<USBController>().program = currentProgram;
             e.snappedObject.GetComponent<USBController>().isBad = true;
+            setClipAndPlay(errorRealBad);
         }
         else if (currentState == STATE.Downloading)
         {
             e.snappedObject.GetComponent<USBController>().program = USB_PROGRAM.NONE;
             e.snappedObject.GetComponent<USBController>().isBad = true;
+            setClipAndPlay(errorRealBad);
         }
         currentUSBs.Remove(e.snappedObject);
         stopDownloadAndInstall();
@@ -106,6 +136,7 @@ public class FixatronController : MonoBehaviour {
             if (timer > timeToDownload)
             {
                 currentState = STATE.Installing;
+                setClipAndPlay(startInstall);
                 timer = 0.0f;
             }
             updateMonitors();
@@ -114,6 +145,7 @@ public class FixatronController : MonoBehaviour {
         {
             if (timer > timeToInstall)
             {
+                setClipAndPlay(finishedInstall);
                 currentState = STATE.USBReady;
                 foreach (GameObject currentUSB in currentUSBs)
                 {
@@ -206,6 +238,10 @@ public class FixatronController : MonoBehaviour {
         {
             currentProgram = (USB_PROGRAM)newProgram;
         }
+        else
+        {
+            setClipAndPlay(error);
+        }
 
         if (currentState == STATE.NoProgramSelected)
         {
@@ -215,14 +251,22 @@ public class FixatronController : MonoBehaviour {
         updateMonitors();
     }
 
-    public void startDownload()
+    public void startDownloading(float value, float normalizedValue)
     {
-        if (currentState == STATE.WaitingToDownload)
+        if (normalizedValue > 95 && !speakers[0].isPlaying)
         {
-            currentState = STATE.Downloading;
-            timer = 0.0f;
+            if (currentState == STATE.WaitingToDownload)
+            {
+                setClipAndPlay(startDownload);
+                currentState = STATE.Downloading;
+                timer = 0.0f;
+            }
+            else
+            {
+                setClipAndPlay(error);
+            }
+            updateMonitors();
         }
-        updateMonitors();
     }
 
     public void stopDownloadAndInstall()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.IO;
 
@@ -67,7 +68,7 @@ public class ScoreTracker : MonoBehaviour {
     {
         currentScore.playerName = name;
         saveData();
-        Application.LoadLevel(3);
+        SceneManager.LoadScene(3);
     }
 
     public void saveData()

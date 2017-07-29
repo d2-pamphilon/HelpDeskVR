@@ -134,10 +134,35 @@ public class Laptop : VRTK_InteractableObject
     public void selfDestruct()
     {
         //BlueScreen
-        canvas.active = true;
-        portal.active = false;
-        canvas.transform.FindChild("BlueScreen").gameObject.active = true;
-        canvas.transform.FindChild("WindowsHappy").gameObject.active = false;
+        canvas.SetActive(true);
+        portal.SetActive(false);
+        var blueScreen = canvas.transform.FindChild("BlueScreen").gameObject;
+        blueScreen.SetActive(true);
+        switch (correctSolution)
+        {
+            case USB_PROGRAM.EncryptionTool:
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "The Data in the computer was very important and you didn't encrypt it.";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: WHY ENCRYPTION IS IMPORTANT";
+                break;
+            case USB_PROGRAM.PasswordChanger:
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "Your password was weak and you reused it a lot.";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: CREATE STRONG PASSWORDS";
+                break;
+            case USB_PROGRAM.PhishingFilter:
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "The computer was subject of a Phishing attack, you should have installed a spam filter!";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: AVOID PHISHING ATTACKS";
+                break;
+            case USB_PROGRAM.PublicLogin:
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "TBA";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: TBA";
+                break;
+            case USB_PROGRAM.WannaCryFix:
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "The computer was infected by WannaCry, a Ransomware attack, you should update more often.";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: HOW TO AVOID RANSOMWARE LIKE WANNACRY";
+                break;
+        }
+
+        canvas.transform.FindChild("WindowsHappy").gameObject.SetActive(false);
         GameManager.Instance.scoreTracker.currentScore.laptopsFailed++;
         StartCoroutine(destroyMe());
     }
@@ -146,10 +171,10 @@ public class Laptop : VRTK_InteractableObject
     {
         GameManager.Instance.DestroyDimension(this.gameObject);
         //Laptop goes good
-        canvas.active = true;
-        portal.active = false;
-        canvas.transform.FindChild("BlueScreen").gameObject.active = false;
-        canvas.transform.FindChild("WindowsHappy").gameObject.active = true;
+        canvas.SetActive(true);
+        portal.SetActive(false);
+        canvas.transform.FindChild("BlueScreen").gameObject.SetActive(false);
+        canvas.transform.FindChild("WindowsHappy").gameObject.SetActive(true);
         GameManager.Instance.scoreTracker.currentScore.laptopsFixed++;
         yield return new WaitForSeconds(10.0f);
         Instantiate(smoke, this.transform.position, this.transform.rotation, this.transform.parent);

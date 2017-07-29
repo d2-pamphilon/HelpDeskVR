@@ -32,10 +32,13 @@ public class SceneChanger : MonoBehaviour {
         }
         if (!leaderboardActive)
         {
-            mainMenu.SetActive(true);
-            if (Vector3.Distance(leaderboard.transform.position, downPoint.position) < 1.0f)
+            if (mainMenu)
             {
-                leaderboard.SetActive(false);
+                mainMenu.SetActive(true);
+                if (Vector3.Distance(leaderboard.transform.position, downPoint.position) < 1.0f)
+                {
+                    leaderboard.SetActive(false);
+                }
             }
         }
 
@@ -54,13 +57,16 @@ public class SceneChanger : MonoBehaviour {
 
 	public void ChangeScene(int index)
     {
-        StartCoroutine(ChangeSceneCoroutine(index));
+        SceneManager.LoadScene(index, LoadSceneMode.Single);
+        //StartCoroutine(ChangeSceneCoroutine(index));
     }
 
     IEnumerator ChangeSceneCoroutine(int index)
     {
+        yield return new WaitForFixedUpdate();
         yield return new WaitForEndOfFrame();
-        SceneManager.LoadScene(index);
+        yield return new WaitForEndOfFrame();
+        
         yield return null;
     }
 

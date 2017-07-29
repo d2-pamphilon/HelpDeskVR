@@ -10,6 +10,7 @@ public class SoundOnCollision : MonoBehaviour {
         if (!audio.isPlaying && col.relativeVelocity.magnitude >= .5)
         {
             audio.volume = col.relativeVelocity.magnitude / 20;
+            if (audio.isActiveAndEnabled)
             audio.Play();
         }
     }

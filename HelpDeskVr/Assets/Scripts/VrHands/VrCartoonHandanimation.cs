@@ -20,26 +20,26 @@ public class VrCartoonHandanimation : MonoBehaviour
     //int MiddleFinger = Animator.StringToHash("MiddleFinger");
     // Use this for initialization
 
-    int Idle = Animator.StringToHash("Idle");
+    //int Idle = Animator.StringToHash("Idle");
     int Point = Animator.StringToHash("Point");
     int GrabLarge = Animator.StringToHash("GrabLarge");
-    int GrabSmall = Animator.StringToHash("GrabSmall");
-    int GrabStickUp = Animator.StringToHash("GrabStickUp");
-    int GrabStickFront = Animator.StringToHash("GrabStickFront");
-    int ThumbUp = Animator.StringToHash("ThumbUp");
-    int Fist = Animator.StringToHash("Fist");
-    int Gun = Animator.StringToHash("Gun");
-    int GunShoot = Animator.StringToHash("GunShoot");
-    int PushButton = Animator.StringToHash("PushButton");
-    int Spread = Animator.StringToHash("Spread");
-    int MiddleFinger = Animator.StringToHash("MiddleFinger");
-    int Peace = Animator.StringToHash("Peace");
-    int OK = Animator.StringToHash("OK");
-    int Phone = Animator.StringToHash("Phone");
-    int Rock = Animator.StringToHash("Rock");
+    //int GrabSmall = Animator.StringToHash("GrabSmall");
+    //int GrabStickUp = Animator.StringToHash("GrabStickUp");
+    //int GrabStickFront = Animator.StringToHash("GrabStickFront");
+    //int ThumbUp = Animator.StringToHash("ThumbUp");
+    //int Fist = Animator.StringToHash("Fist");
+    //int Gun = Animator.StringToHash("Gun");
+    //int GunShoot = Animator.StringToHash("GunShoot");
+    //int PushButton = Animator.StringToHash("PushButton");
+    //int Spread = Animator.StringToHash("Spread");
+    //int MiddleFinger = Animator.StringToHash("MiddleFinger");
+    //int Peace = Animator.StringToHash("Peace");
+    //int OK = Animator.StringToHash("OK");
+    //int Phone = Animator.StringToHash("Phone");
+    //int Rock = Animator.StringToHash("Rock");
     int Natural = Animator.StringToHash("Natural");
-    int Number3 = Animator.StringToHash("Number3");
-    int Number4 = Animator.StringToHash("Number4");
+    //int Number3 = Animator.StringToHash("Number3");
+    //int Number4 = Animator.StringToHash("Number4");
 
     public enum HandAnim
     {
@@ -85,7 +85,7 @@ public class VrCartoonHandanimation : MonoBehaviour
         }
         else
         {
-            print("found hands");
+            //print("found hands");
         }
 
         m_watch = gameObject.GetComponentInChildren<VrHandWatch>();
@@ -119,7 +119,7 @@ public class VrCartoonHandanimation : MonoBehaviour
 
     private void DoTriggerPressed(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        print("GrabSmall!");
+        //print("GrabSmall!");
         m_animation.SetTrigger(GrabLarge);
         //Turn off finger collision
 
@@ -127,14 +127,14 @@ public class VrCartoonHandanimation : MonoBehaviour
 
     private void DoTriggerReleased(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        print("Natural");
+        //print("Natural");
         m_animation.SetTrigger(Natural);
 
     }
 
     private void DoGripPressed(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        print("Point");
+        //print("Point");
         m_animation.SetTrigger(Point);
         //turn on finger collision
         for (int i = 0; i < m_handCollision.Count; i++)
@@ -145,7 +145,7 @@ public class VrCartoonHandanimation : MonoBehaviour
 
     private void DoGripReleased(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        print("Natural");
+        //print("Natural");
         m_animation.SetTrigger(Natural);
         foreach (var a in gameObject.GetComponentsInChildren<VrHandCollision>())
         {
