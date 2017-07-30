@@ -28402,7 +28402,9 @@ MonoBehaviour:
   goodUSBs:
   - {fileID: 1024863224427052, guid: b3a5e509cec138447b7af02110ce73b2, type: 2}
   badUSBs:
-  - {fileID: 1024863224427052, guid: b3a5e509cec138447b7af02110ce73b2, type: 2}
+  - {fileID: 1696687894053192, guid: 3b8b5a3e83d5f0d408c6bbef79a5ad46, type: 2}
+  - {fileID: 1070605108426840, guid: e533d8bb02bebb44d8530cdebd227bdb, type: 2}
+  - {fileID: 1607890302244852, guid: 6334b15b4b8547d42b34ea84df263e92, type: 2}
 --- !u!114 &114529785050577406
 MonoBehaviour:
   m_ObjectHideFlags: 1
