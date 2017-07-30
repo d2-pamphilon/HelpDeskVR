@@ -11,7 +11,9 @@ public class DialToText : MonoBehaviour {
 
     public Text txt;
 
+    [SerializeField]
     VRTK_Wheel[] wheels;
+
     public static char[] Aplhabet = {' ', 'A', 'B', 'C', 'D', 'E', 'F',
                         'G', 'H', 'I', 'J', 'K', 'L',
                         'M', 'N', 'O', 'P', 'Q', 'R',
@@ -21,17 +23,17 @@ public class DialToText : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        wheels = GetComponentsInChildren<VRTK_Wheel>();
-        Array.Sort(wheels, delegate (VRTK_Wheel wheel1, VRTK_Wheel wheel2) {
-            if (wheel2.transform.position.x > wheel1.transform.position.x)
-            {
-                return 1;
-            }
-            else
-            {
-                return -1;
-            };
-        });
+        //wheels = GetComponentsInChildren<VRTK_Wheel>();
+        //Array.Sort(wheels, delegate (VRTK_Wheel wheel1, VRTK_Wheel wheel2) {
+        //    if (wheel2.transform.position.x > wheel1.transform.position.x)
+        //    {
+        //        return 1;
+        //    }
+        //    else
+        //    {
+        //        return -1;
+        //    };
+        //});
     }
 	
 	// Update is called once per frame
