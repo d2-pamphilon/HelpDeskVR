@@ -24,7 +24,7 @@ public class UnderWater : MonoBehaviour
 
     void Update()
     {
-        if (m_time.elapsedTime >= 1)
+        if (m_time.elapsedTime >= 100)
         {
             if (m_timer <= 1)
             {

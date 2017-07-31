@@ -1682,7 +1682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4028649613266730}
   - component: {fileID: 114385657151372020}
-  - component: {fileID: 65058794149861152}
   m_Layer: 30
   m_Name: Spawner
   m_TagString: Untagged
@@ -3693,6 +3692,7 @@ GameObject:
   - component: {fileID: 33981590059811264}
   - component: {fileID: 23737745450074766}
   - component: {fileID: 65486655509680852}
+  - component: {fileID: 54026508926799560}
   m_Layer: 30
   m_Name: Floor
   m_TagString: Untagged
@@ -3833,6 +3833,23 @@ GameObject:
   - component: {fileID: 64071330119511984}
   m_Layer: 30
   m_Name: Bone_Wing_01 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1845469811867524
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4450229357265586}
+  - component: {fileID: 65410032316112970}
+  - component: {fileID: 54845475411358232}
+  m_Layer: 30
+  m_Name: LargeCollisionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4609,6 +4626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4715436049650894}
+  - {fileID: 4450229357265586}
   m_Father: {fileID: 4398703173382112}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6372,6 +6390,19 @@ Transform:
   m_Father: {fileID: 4553988699307066}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 85.174, z: 0}
+--- !u!4 &4450229357265586
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845469811867524}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4028649613266730}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4451529081607444
 Transform:
   m_ObjectHideFlags: 1
@@ -12807,6 +12838,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250670780299236}
   m_Mesh: {fileID: 4300002, guid: dc4f2d2b6a394114095a1e09cfc311f9, type: 3}
+--- !u!54 &54026508926799560
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811524484969490}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54050105498462526
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -12828,6 +12874,21 @@ Rigidbody:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022959004586590}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54845475411358232
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845469811867524}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -14504,18 +14565,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 8ed862a8eb5964d4b9d345b24d9e5361, type: 3}
---- !u!65 &65058794149861152
+--- !u!65 &65410032316112970
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1344435414310764}
+  m_GameObject: {fileID: 1845469811867524}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &65486655509680852
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -14523,7 +14584,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811524484969490}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 27.476501, z: 10}
@@ -14895,7 +14956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customSkybox: {fileID: 0}
   layer: 30
-  initialWorld: 0
+  initialWorld: 1
   connectedPortals: []
   cam: {fileID: 0}
 --- !u!114 &114083407749326600
@@ -14957,6 +15018,9 @@ MonoBehaviour:
   m_FishPrefab: {fileID: 1969406654432958, guid: 905d616541fe9d043a8e3bc0501a3ed0,
     type: 2}
   m_GoalPrefab: {fileID: 1803541656102098}
+  m_TimeLeft: 0
+  m_Player: {fileID: 0}
+  m_RotationSpeed: 0.5
 --- !u!114 &114483585402632600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15007,6 +15071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EndColour: {r: 1, g: 0, b: 0, a: 0}
+  m_timer: 0
 --- !u!114 &114916029425579700
 MonoBehaviour:
   m_ObjectHideFlags: 1
