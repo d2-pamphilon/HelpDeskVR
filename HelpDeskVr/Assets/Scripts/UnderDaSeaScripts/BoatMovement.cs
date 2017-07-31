@@ -8,7 +8,7 @@ public class BoatMovement : MonoBehaviour {
     
     void Start()
     {
-        Destroy(gameObject, 100);
+        Destroy(gameObject, 25);
     }
     	
 	// Update is called once per frame

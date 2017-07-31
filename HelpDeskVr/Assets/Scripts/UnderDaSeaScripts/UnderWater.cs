@@ -11,24 +11,31 @@ public class UnderWater : MonoBehaviour
 
     private float m_fadetime = 0.005f;
     private DimensionTimer m_time;
-    private float m_timer;
+    public float m_timer;
 
 
     void Start()
     {
         m_Light = GameObject.Find("UnderWaterLighting").GetComponent<Light>();
         m_OriginalColour = m_Light.color;
-
+        m_timer = 0;
         m_time = GetComponent<DimensionTimer>();
     }
 
     void Update()
     {
-        if (m_time.elapsedTime >= 100)
+        if (m_time.elapsedTime >= 1)
+        {
             if (m_timer <= 1)
             {
-                m_timer += Time.deltaTime / m_fadetime;
+                m_timer += 0.0025f;
                 m_Light.color = Color.Lerp(m_OriginalColour, m_EndColour, m_timer);
+            }
+            else
+            {
+                gameObject.GetComponent<UnderWater>().enabled = false;
+            }
+
             }
     }
 
