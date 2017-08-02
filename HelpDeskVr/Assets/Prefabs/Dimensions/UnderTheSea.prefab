@@ -14956,7 +14956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customSkybox: {fileID: 0}
   layer: 30
-  initialWorld: 1
+  initialWorld: 0
   connectedPortals: []
   cam: {fileID: 0}
 --- !u!114 &114083407749326600
@@ -15018,7 +15018,10 @@ MonoBehaviour:
   m_FishPrefab: {fileID: 1969406654432958, guid: 905d616541fe9d043a8e3bc0501a3ed0,
     type: 2}
   m_GoalPrefab: {fileID: 1803541656102098}
+  m_size: 4
   m_TimeLeft: 0
+  m_Time: 0
+  m_Timer: 1
   m_Player: {fileID: 0}
   m_RotationSpeed: 0.5
 --- !u!114 &114483585402632600
