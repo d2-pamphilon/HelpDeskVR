@@ -17,15 +17,7 @@ public class PcRandRow : MonoBehaviour
         foreach (Transform child in transform)
         {
             m_CompLoc.Add(child);
-            switch (Random.Range(0, 2))
-            {
-                case 0:
-                    Instantiate(m_Prefab[0], child.position, Quaternion.identity, child);
-                    break;
-                case 1:
-                    Instantiate(m_Prefab[1], child.position, Quaternion.identity, child);
-                    break;
-            }
+            Instantiate(m_Prefab[Random.Range(0, m_Prefab.Count)], child.position, Quaternion.identity, child);
             num++;
             if (num >=6)
             {
