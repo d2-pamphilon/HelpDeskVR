@@ -17,7 +17,8 @@ public class PcRandRow : MonoBehaviour
         foreach (Transform child in transform)
         {
             m_CompLoc.Add(child);
-            Instantiate(m_Prefab[Random.Range(0, m_Prefab.Count)], child.position, Quaternion.identity, child);
+            GameObject m_Pc = Instantiate(m_Prefab[Random.Range(0, m_Prefab.Count)], child.position, Quaternion.identity, child);
+            DimensionChanger.SetLayerRecursively(m_Pc, gameObject.layer);
             num++;
             if (num >=6)
             {
