@@ -18,7 +18,7 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4504693530762924}
+  - component: {fileID: 4153384816838878}
   - component: {fileID: 114870041554514468}
   m_Layer: 0
   m_Name: GameManager 1
@@ -27,15 +27,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4504693530762924
+--- !u!4 &4153384816838878
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886532098516798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.041992188, z: -0.5}
+  m_LocalScale: {x: 0.001000607, y: 0.001000607, z: 0.001000607}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,6 +78,10 @@ MonoBehaviour:
     Dimension: {fileID: 1281118273020438, guid: 3238e5caaeb9ad64198d5318610d045d,
       type: 2}
     fix: 3
+  - Laptop: {fileID: 1906204298200032, guid: ceb714bda7cab4d40b8ff8a65c9b5d62, type: 2}
+    Dimension: {fileID: 1390715113774040, guid: 3889b21dd4a7ecd43a52f77c44744e13,
+      type: 2}
+    fix: 6
   scoreTracker: {fileID: 0}
   timerDisplay: {fileID: 0}
   LaptopsFixedDisplay: {fileID: 0}

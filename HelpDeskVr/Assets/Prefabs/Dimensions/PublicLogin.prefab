@@ -768,7 +768,6 @@ GameObject:
   - component: {fileID: 4254724435291670}
   - component: {fileID: 114469357296819650}
   - component: {fileID: 114307585574562616}
-  - component: {fileID: 114664370163012904}
   m_Layer: 0
   m_Name: PublicLogin
   m_TagString: Untagged
@@ -6747,22 +6746,6 @@ MonoBehaviour:
   - {fileID: 1190973862376748, guid: e9458664351bf704c96b868feaa8aae7, type: 2}
   m_CompLoc: []
 --- !u!114 &114469357296819650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1390715113774040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34fc569012251441a8fdc196d69ae63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customSkybox: {fileID: 0}
-  layer: 0
-  initialWorld: 0
-  connectedPortals: []
-  cam: {fileID: 0}
---- !u!114 &114664370163012904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
