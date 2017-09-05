@@ -16,6 +16,8 @@ public class PCRandError : MonoBehaviour
     [Space(5)]
     public Canvas[] m_Canvas;
     private int m_CanvasNumber;
+    public Text m_Text;
+    public Image m_Image;
 
 
     [Header("Dimensional Timer")]
@@ -27,7 +29,7 @@ public class PCRandError : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //get the dimentional timer
+        //get the dimensional timer
         m_Time = FindObjectOfType<DimensionTimer>();
 
 
@@ -35,12 +37,15 @@ public class PCRandError : MonoBehaviour
         m_RandError = Random.Range(0, m_StringError.Capacity);
         m_CanvasNumber = Random.Range(0, m_Canvas.Length);
 
-
+        m_Text = m_Canvas[m_CanvasNumber].GetComponentInChildren<Text>();
 
         if (m_rand <= 30)
         {
             //choose a random error to display
-
+            m_Canvas[m_CanvasNumber].GetComponentInChildren<Image>().color = Color.white;
+            m_Text.enabled = true;
+            m_Text.fontStyle = FontStyle.Bold;
+            m_Text.text = m_StringError[m_RandError];
         }
         else
         {
@@ -49,6 +54,7 @@ public class PCRandError : MonoBehaviour
         }
 
     }
+   
 
     // Update is called once per frame
     void Update()
