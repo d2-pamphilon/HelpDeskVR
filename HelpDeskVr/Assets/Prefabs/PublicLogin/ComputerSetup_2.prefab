@@ -249,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190973862376748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.266318, y: 0, z: 1.1755865}
+  m_LocalPosition: {x: 10.695099, y: 0, z: 1.8615079}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children:
   - {fileID: 4938999349835812}
@@ -684,13 +684,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956a9e0aa24b1a446914533ba2008ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovieTexture:
-  - {fileID: 15200000, guid: 297961277005ba94089556f26dd09096, type: 3}
+  m_StringError:
+  - BANK
+  - AMAZON
+  - FACE BOOK
+  - PAYPAL
+  - WORK
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_Canvas:
   - {fileID: 223390654131526788}
-  m_Image: {fileID: 0}
-  m_RawImage: {fileID: 0}
   m_Time: {fileID: 0}
 --- !u!114 &114324026716797978
 MonoBehaviour:
