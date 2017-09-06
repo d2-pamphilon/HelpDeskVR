@@ -38,11 +38,12 @@ public class PCRandError : MonoBehaviour
         m_CanvasNumber = Random.Range(0, m_Canvas.Length);
 
         m_Text = m_Canvas[m_CanvasNumber].GetComponentInChildren<Text>();
+        m_Image = m_Canvas[m_CanvasNumber].GetComponentInChildren<Image>();
 
         if (m_rand <= 30)
         {
             //choose a random error to display
-            m_Canvas[m_CanvasNumber].GetComponentInChildren<Image>().color = Color.white;
+            m_Image.color = Color.white;
             m_Text.enabled = true;
             m_Text.fontStyle = FontStyle.Bold;
             m_Text.text = m_StringError[m_RandError];
@@ -59,6 +60,12 @@ public class PCRandError : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (m_Time.getRemainingTime() <= 20)
+        {           
+            m_Image.sprite = m_DeathError;
+            m_Text.enabled = false;
+            this.enabled = false;
+        }
+        //
     }
 }
