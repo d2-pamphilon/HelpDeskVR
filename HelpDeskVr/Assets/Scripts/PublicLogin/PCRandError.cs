@@ -17,7 +17,8 @@ public class PCRandError : MonoBehaviour
     public Canvas[] m_Canvas;
     private int m_CanvasNumber;
     public Text m_Text;
-    public Image m_Image;
+    public Image m_DeathImage;
+    public Image m_BarImage;
 
 
     [Header("Dimensional Timer")]
@@ -38,12 +39,14 @@ public class PCRandError : MonoBehaviour
         m_CanvasNumber = Random.Range(0, m_Canvas.Length);
 
         m_Text = m_Canvas[m_CanvasNumber].GetComponentInChildren<Text>();
-        m_Image = m_Canvas[m_CanvasNumber].GetComponentInChildren<Image>();
+        Image[] m_im = m_Canvas[m_CanvasNumber].GetComponentsInChildren<Image>();
+        m_DeathImage = m_im[0];
+        m_BarImage = m_im[1] ;
 
         if (m_rand <= 30)
         {
             //choose a random error to display
-            m_Image.color = Color.white;
+            m_DeathImage.color = Color.white;
             m_Text.enabled = true;
             m_Text.fontStyle = FontStyle.Bold;
             m_Text.text = m_StringError[m_RandError];
@@ -61,11 +64,12 @@ public class PCRandError : MonoBehaviour
     void Update()
     {
         if (m_Time.getRemainingTime() <= 20)
-        {           
-            m_Image.sprite = m_DeathError;
+        {
+            m_DeathImage.sprite = m_DeathError;
             m_Text.enabled = false;
             this.enabled = false;
         }
+
         //
     }
 }
