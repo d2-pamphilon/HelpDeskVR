@@ -723,6 +723,7 @@ MonoBehaviour:
   - FACE BOOK
   - PAYPAL
   - WORK
+  - EMAIL
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:

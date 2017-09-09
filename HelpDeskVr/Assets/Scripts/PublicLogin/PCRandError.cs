@@ -40,7 +40,7 @@ public class PCRandError : MonoBehaviour
         int m_rand = Random.Range(0, 100);
         m_RandError = Random.Range(0, m_StringError.Capacity);
         m_CanvasNumber = Random.Range(0, m_Canvas.Length);
-        m_IncVal = Random.Range(0f, 0.05f);
+        m_IncVal = Random.Range(0f, 0.1f);
 
         m_Text = m_Canvas[m_CanvasNumber].GetComponentInChildren<Text>();
         Image[] m_im = m_Canvas[m_CanvasNumber].GetComponentsInChildren<Image>();
@@ -75,6 +75,7 @@ public class PCRandError : MonoBehaviour
         {
             m_DeathImage.sprite = m_DeathError;
             m_Text.enabled = false;
+            m_BarImage.enabled = false; 
             this.enabled = false;
         }
 
