@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour {
         if (laptopTimer > timeUntilNextSpawn && m_lastFramerate > minimumFramesForSpawningLaptop)
         {
             laptopTimer = 0.0f;
-            SpawnLaptop(Random.Range(0, 4));
+            SpawnLaptop(Random.Range(0, 5));
         }
         if (createdDimensions.Count == 0)
         {

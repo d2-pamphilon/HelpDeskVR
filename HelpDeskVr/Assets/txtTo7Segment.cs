@@ -47,6 +47,7 @@ public class txtTo7Segment : MonoBehaviour {
             str += Aplhabet[(int)(wheels[i].GetValue())];
         }
         Name = str;
+        GameManager.Instance.scoreTracker.currentScore.playerName = Name;
         char[] characters = Name.ToCharArray();
         counter = 0;
         foreach (char C in characters)

@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 65194413856807440}
   - component: {fileID: 54886380277742482}
   - component: {fileID: 114812957419681034}
-  - component: {fileID: 114354890030107604}
   - component: {fileID: 114022386021952498}
   - component: {fileID: 114461094941709726}
   - component: {fileID: 82006242540267882}
@@ -390,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564f91929d547364e9e0bc74ca3febcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114354890030107604
+--- !u!114 &114394198237449134
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -398,7 +397,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607890302244852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b412243d4d0e734b85b49f4b8889caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -419,17 +418,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114394198237449134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607890302244852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b412243d4d0e734b85b49f4b8889caf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   program: 0
   isBad: 1
 --- !u!114 &114461094941709726

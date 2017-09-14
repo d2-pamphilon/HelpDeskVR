@@ -99,6 +99,7 @@ public class FixatronController : MonoBehaviour {
     {
         currentUSBs.Add(e.snappedObject);
         setClipAndPlay(acceptedUSB);
+        HintsManager.Instance.setHintState(HintState.InsertedUSB);
         if (currentProgram != USB_PROGRAM.NONE)
         {
             currentState = STATE.WaitingToDownload;
@@ -147,6 +148,7 @@ public class FixatronController : MonoBehaviour {
             {
                 setClipAndPlay(finishedInstall);
                 currentState = STATE.USBReady;
+                HintsManager.Instance.setHintState(HintState.FinishedInstalling);
                 foreach (GameObject currentUSB in currentUSBs)
                 {
                     currentUSB.GetComponent<USBController>().program = currentProgram;

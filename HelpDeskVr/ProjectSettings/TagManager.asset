@@ -17,6 +17,8 @@ TagManager:
   - OtherSaucers
   - USB
   - USB Spawn
+  - Buttons
+  - USBSlots
   layers:
   - Default
   - TransparentFX

@@ -46,6 +46,7 @@ public class Laptop : VRTK_InteractableObject
 
     public override void Grabbed(GameObject currentGrabbingObject)
     {
+        HintsManager.Instance.Grabbed(this.gameObject);
         base.Grabbed(currentGrabbingObject);
         if (firstTimeGrab)
         {
@@ -146,15 +147,15 @@ public class Laptop : VRTK_InteractableObject
                 break;
             case USB_PROGRAM.PasswordChanger:
                 blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "Your password was weak and you reused it a lot.";
-                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: CREATE STRONG PASSWORDS";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: HOW TO CREATE STRONG PASSWORDS";
                 break;
             case USB_PROGRAM.PhishingFilter:
                 blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "The computer was subject of a Phishing attack, you should have installed a spam filter!";
-                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: AVOID PHISHING ATTACKS";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: HOW TO AVOID PHISHING ATTACKS";
                 break;
             case USB_PROGRAM.PublicLogin:
-                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "TBA";
-                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: TBA";
+                blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "When using public computers never do anything you don't want others to see.";
+                blueScreen.transform.FindChild("Online").GetComponent<Text>().text = "You can search this problem online: SAFELY USE PUBLIC COMPUTERS";
                 break;
             case USB_PROGRAM.WannaCryFix:
                 blueScreen.transform.FindChild("Explanation").GetComponent<Text>().text = "The computer was infected by WannaCry, a Ransomware attack, you should update more often.";

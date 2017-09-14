@@ -30,6 +30,7 @@ public static class DimensionChanger {
 	}
 
 	public static void SwitchCameraRender(Camera camera, int fromDimensionLayer, int toDimensionLayer, Material dimensionSkybox) {
+        HintsManager.Instance.setHintState(HintState.TakeGoodUsb);
 		CameraExtensions.LayerCullingShow (camera, toDimensionLayer);
 		CameraExtensions.LayerCullingHide (camera, fromDimensionLayer);
 		if (dimensionSkybox) {
