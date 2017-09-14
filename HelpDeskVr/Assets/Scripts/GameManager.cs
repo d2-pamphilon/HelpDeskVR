@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour {
         if (createdDimensions.Count == 0)
         {
             laptopTimer = 0.0f;
-            SpawnLaptop(Random.Range(0, 4));
+            SpawnLaptop(Random.Range(0, 5));
         }
 
 
@@ -194,6 +194,10 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SpawnLaptop(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SpawnLaptop(4);
         }
 
     }
