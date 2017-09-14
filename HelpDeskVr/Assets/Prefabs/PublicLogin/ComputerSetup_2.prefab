@@ -115,6 +115,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1475485387883510
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4002332977344572}
+  - component: {fileID: 114929456472831804}
+  m_Layer: 0
+  m_Name: Spawn_Loc_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1561694526286988
 GameObject:
   m_ObjectHideFlags: 1
@@ -234,6 +250,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4002332977344572
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475485387883510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0186, y: -0.00727, z: 0.02507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4938999349835812}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4254682448388480
 Transform:
   m_ObjectHideFlags: 1
@@ -267,7 +296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190973862376748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.695099, y: 0, z: 1.8615079}
+  m_LocalPosition: {x: 11.661189, y: 0, z: -0.82777023}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children:
   - {fileID: 4938999349835812}
@@ -356,7 +385,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 20}
-  m_Children: []
+  m_Children:
+  - {fileID: 4002332977344572}
   m_Father: {fileID: 4414243011395550}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -898,6 +928,20 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114929456472831804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475485387883510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357416eb921189c4aaeb946dd901d43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Objects:
+  - {fileID: 1614645268734362, guid: 1c39f1495c2c25143aa73e0c25f58558, type: 2}
+  - {fileID: 1125181369739500, guid: 17dddbcc8144d1b4f98eefcb3ab629ba, type: 2}
 --- !u!222 &222155359868075188
 CanvasRenderer:
   m_ObjectHideFlags: 1
