@@ -181,11 +181,11 @@ public class FixatronController : MonoBehaviour {
                 break;
             case USB_PROGRAM.WannaCryFix:
                 MainMonitor.transform.FindChild("Title").GetComponent<Text>().text = "WannaCry update";
-                MainMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Wanna Cry? Install this update and remove vulnerabilities your old PC!";
+                MainMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Wanna Cry? Install this update and remove vulnerabilities from your old PC!";
                 break;
             case USB_PROGRAM.EncryptionTool:
                 MainMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Encryption Tool";
-                MainMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Do you think you have some sensible information? Encrypt your computer and noone will be able to read them!";
+                MainMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Do you think you have some sensible information? Encrypt your computer and no one will be able to read them!";
                 break;
         }
 
