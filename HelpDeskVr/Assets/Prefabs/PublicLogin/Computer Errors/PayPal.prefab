@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1598887107190934}
+  m_IsPrefabParent: 1
+--- !u!1 &1598887107190934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224837508401675758}
+  - component: {fileID: 114557110926281096}
+  m_Layer: 0
+  m_Name: PayPal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114557110926281096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598887107190934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29289b745ba2cd4bb821876199bc487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: 025bfafe6d301514f93a757a3b34bb03, type: 3}
+  - {fileID: 21300000, guid: 3ed40e1c3cdcb144ab170925c97895b2, type: 3}
+  - {fileID: 21300000, guid: 6c870d89081478046a7fa94b41fb2b80, type: 3}
+  - {fileID: 21300000, guid: d62e0bf915a24a144b6e259ebdcf18ea, type: 3}
+  - {fileID: 21300000, guid: 1553eb289b86c7044b339be7d43a783a, type: 3}
+  - {fileID: 21300000, guid: 0fc5080c76a29a44ab0ccaea13e83bbc, type: 3}
+  monitor: {fileID: 0}
+  timer: 0
+  timeBetweenSlides: 1
+  currentImage: 0
+--- !u!224 &224837508401675758
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598887107190934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

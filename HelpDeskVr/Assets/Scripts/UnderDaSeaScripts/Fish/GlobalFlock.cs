@@ -36,6 +36,7 @@ public class GlobalFlock : MonoBehaviour
 
         m_Onetime = true;
 
+        m_Player = GameManager.Instance.mainCamera.transform;
 
         m_GoalPos = new Vector3(Random.Range(-m_size + transform.position.x, m_size + transform.position.x),
              transform.position.y, Random.Range(-m_size + transform.position.z, m_size + transform.position.z));

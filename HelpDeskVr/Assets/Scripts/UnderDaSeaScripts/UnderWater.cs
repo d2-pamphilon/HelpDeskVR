@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnderWater : MonoBehaviour
 {
-    private Light m_Light;
+    public Light m_Light;
 
     private Color m_OriginalColour;
     public Color m_EndColour;
@@ -16,7 +16,7 @@ public class UnderWater : MonoBehaviour
 
     void Start()
     {
-        m_Light = GameObject.Find("UnderWaterLighting").GetComponent<Light>();
+        //m_Light = GameObject.Find("UnderWaterLighting").GetComponent<Light>();
         m_OriginalColour = m_Light.color;
         m_timer = 0;
         m_time = GetComponent<DimensionTimer>();

@@ -70,7 +70,7 @@ public class PasswordsSpawner : MonoBehaviour {
         dir *= 10;
         newPass.GetComponent<PasswordMovement>().target = centerPoint.position + dir;
         newPass.GetComponent<PasswordMovement>().centerPoint = centerPoint;
-        newPass.transform.parent = transform;
+        newPass.transform.SetParent(transform);
         newPass.layer = gameObject.layer;
     }
 }

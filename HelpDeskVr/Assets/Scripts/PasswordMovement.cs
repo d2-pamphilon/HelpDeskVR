@@ -7,10 +7,14 @@ public class PasswordMovement : MonoBehaviour {
     public Vector3 target;
     public Transform centerPoint;
     private float speed = 1.0f;
+    Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<Rigidbody>().AddForce(new Vector3(Random.value, Random.value, Random.value));
+        rb = GetComponent<Rigidbody>();
+        Vector3 tmp =  (new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f)));
+        tmp.Normalize();
+        rb.velocity = tmp;
     }
 	
 	// Update is called once per frame
@@ -24,5 +28,12 @@ public class PasswordMovement : MonoBehaviour {
         //GetComponent<Rigidbody>().AddForce(new Vector3(Random.value/100.0f, Random.value / 100.0f, Random.value / 100.0f));
         //Vector3 heading = centerPoint.position - transform.position;
         //transform.LookAt(transform.position - (GameManager.Instance.mainCamera.transform.position - transform.position));
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Vector3 tmp = (new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f)));
+        tmp.Normalize();
+        rb.velocity = tmp;
     }
 }

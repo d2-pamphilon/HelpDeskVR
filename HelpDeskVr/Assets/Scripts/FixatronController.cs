@@ -199,11 +199,11 @@ public class FixatronController : MonoBehaviour {
                 break;
             case STATE.NoProgramSelected:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Select Program";
-                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Select the program to install from the buttons -> \n <- Get info about the program selected from the other monitor";
+                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Select the program to install from the buttons \n\n Get info about the program selected from the other monitor";
                 break;
             case STATE.WaitingToDownload:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Ready";
-                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Pull the lever to start downloading ->";
+                USBMonitor.transform.FindChild("Explanation").GetComponent<Text>().text = "Pull the lever to start downloading";
                 break;
             case STATE.Downloading:
                 USBMonitor.transform.FindChild("Title").GetComponent<Text>().text = "Downloading";

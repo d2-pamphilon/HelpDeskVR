@@ -31,7 +31,10 @@ public class AudioHuman : MonoBehaviour
 
         if(m_Time >= m_TimeSet)
         {
-            m_AudioSource.Play();
+            if (m_AudioSource.isActiveAndEnabled)
+            {
+                m_AudioSource.Play();
+            }
             m_AudioSource.clip = m_AudioClip[Random.Range(0, m_AudioClip.Length)];
 
             m_TimeSet = Random.Range(10.0f, 15.0f);
