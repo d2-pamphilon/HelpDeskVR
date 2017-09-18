@@ -263,6 +263,18 @@ public class GameManager : MonoBehaviour {
 
     public void DestroyDimension(GameObject Laptop)
     {
+        if (Laptop == null)
+        {
+            Debug.LogError("LaptopInDestructionEmpty");
+            return;
+        }
+
+        if (!createdDimensions.ContainsKey(Laptop))
+        {
+            Debug.LogError("LaptopNotInDictionary");
+            return;
+        }
+
         if (cameraRig.layer == createdDimensions[Laptop].GetComponent<Dimension>().layer)
         {
             DimensionChanger.SwitchDimensions(cameraRig, createdDimensions[Laptop].GetComponent<Dimension>(), mainDimension.GetComponent<Dimension>());
