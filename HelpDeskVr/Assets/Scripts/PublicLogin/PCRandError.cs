@@ -94,6 +94,8 @@ public class PCRandError : MonoBehaviour
     void Update()
     {
         m_Time += Time.deltaTime;
+        if (!m_DTime)
+            return;
         if (m_DTime.getRemainingTime() <= 90)
         {
             if (m_DTime.getRemainingTime() <= 5)
