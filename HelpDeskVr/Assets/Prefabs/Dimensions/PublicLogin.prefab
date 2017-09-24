@@ -8039,7 +8039,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836006131882554}
-  m_LocalRotation: {x: -0.6468741, y: 0.2855765, z: 0.2855765, w: 0.6468741}
+  m_LocalRotation: {x: -0.64687407, y: 0.28557646, z: 0.28557646, w: 0.64687407}
   m_LocalPosition: {x: -2.593, y: -1.347, z: 3.443}
   m_LocalScale: {x: 3.626553, y: 3.6265535, z: 3.6265545}
   m_Children: []
@@ -18156,7 +18156,7 @@ MonoBehaviour:
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:
-  - {fileID: 223182330650559288}
+  - {fileID: 223277222499230594}
   m_Text: {fileID: 0}
   m_DeathImage: {fileID: 0}
   m_BarImage: {fileID: 0}
@@ -18185,7 +18185,7 @@ MonoBehaviour:
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:
-  - {fileID: 223182330650559288}
+  - {fileID: 223774652164709480}
   m_Text: {fileID: 0}
   m_DeathImage: {fileID: 0}
   m_BarImage: {fileID: 0}
@@ -18235,7 +18235,7 @@ MonoBehaviour:
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:
-  - {fileID: 223182330650559288}
+  - {fileID: 223087742258953402}
   m_Text: {fileID: 0}
   m_DeathImage: {fileID: 0}
   m_BarImage: {fileID: 0}
@@ -19086,7 +19086,7 @@ MonoBehaviour:
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:
-  - {fileID: 223182330650559288}
+  - {fileID: 223348535520886882}
   m_Text: {fileID: 0}
   m_DeathImage: {fileID: 0}
   m_BarImage: {fileID: 0}
@@ -19271,7 +19271,7 @@ MonoBehaviour:
   m_DeathError: {fileID: 21300000, guid: f2f4d9271bb168849ba877092244be90, type: 3}
   m_IncVal: 0
   m_Canvas:
-  - {fileID: 223182330650559288}
+  - {fileID: 223287585671247750}
   m_Text: {fileID: 0}
   m_DeathImage: {fileID: 0}
   m_BarImage: {fileID: 0}

@@ -40,11 +40,11 @@ public static class DimensionChanger {
             }
         }
 
-        Light[] lights = GameObject.FindObjectsOfType<Light>();
-        foreach (Light l in lights)
-        {
-            l.enabled = l.gameObject.layer == GameManager.Instance.cameraRig.layer;
-        }
+        //Light[] lights = GameObject.FindObjectsOfType<Light>();
+        //foreach (Light l in lights)
+        //{
+        //    l.enabled = l.gameObject.layer == GameManager.Instance.cameraRig.layer;
+        //}
     }
 
 	public static void SwitchCameraRender(Camera camera, int fromDimensionLayer, int toDimensionLayer, Material dimensionSkybox) {

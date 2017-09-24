@@ -105,22 +105,24 @@ public class PCRandError : MonoBehaviour
                 m_BarImage.enabled = false;
                 this.enabled = false;
             }
-
-            if ((m_BarImage.fillAmount <= 1f) && m_Time >= 1f)
+            if (m_BarImage)
             {
-                m_Time = 0;
-                m_BarImage.fillAmount += m_IncVal;
-            }
-            if (m_BarImage.fillAmount >= 1f)
-            {
-                m_Error.SetActive(false);
-                m_DeathImage.sprite = m_DeathError;
-                m_BarImage.enabled = false;
-                this.enabled = false;
-                if (m_Playsound)
+                if ((m_BarImage.fillAmount <= 1f) && m_Time >= 1f)
                 {
-                    m_AudioSource.Play();
-                    m_Playsound = false;
+                    m_Time = 0;
+                    m_BarImage.fillAmount += m_IncVal;
+                }
+                if (m_BarImage.fillAmount >= 1f)
+                {
+                    m_Error.SetActive(false);
+                    m_DeathImage.sprite = m_DeathError;
+                    m_BarImage.enabled = false;
+                    this.enabled = false;
+                    if (m_Playsound)
+                    {
+                        m_AudioSource.Play();
+                        m_Playsound = false;
+                    }
                 }
             }
 
