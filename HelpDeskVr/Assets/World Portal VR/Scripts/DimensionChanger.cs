@@ -27,7 +27,25 @@ public static class DimensionChanger {
 		if(parent != null && parent.GetComponent<CharacterController>()) {
 			parent.gameObject.layer = toDimension.layer;
 		}
-	}
+
+        foreach (var aud in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            if (aud.gameObject.layer == GameManager.Instance.cameraRig.gameObject.layer)
+            {
+                aud.mute = false;
+            }
+            else
+            {
+                aud.mute = true;
+            }
+        }
+
+        Light[] lights = GameObject.FindObjectsOfType<Light>();
+        foreach (Light l in lights)
+        {
+            l.enabled = l.gameObject.layer == GameManager.Instance.cameraRig.layer;
+        }
+    }
 
 	public static void SwitchCameraRender(Camera camera, int fromDimensionLayer, int toDimensionLayer, Material dimensionSkybox) {
         HintsManager.Instance.setHintState(HintState.TakeGoodUsb);

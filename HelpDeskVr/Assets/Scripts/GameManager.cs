@@ -11,6 +11,7 @@ public struct LaptopDimension
     public USB_PROGRAM fix;
 }
 
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
@@ -44,10 +45,11 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     public GameObject mainDimension;
+    private DimensionTimer mainDimensionTimer;
     [SerializeField]
     public Camera mainCamera;
     [SerializeField]
-    GameObject cameraRig;
+    public GameObject cameraRig;
     [SerializeField]
     Transform laptopSpawnPoint;
     [SerializeField]
@@ -101,31 +103,22 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         createdDimensions = new Dictionary<GameObject, GameObject>();
+        mainDimensionTimer = mainDimension.GetComponent<DimensionTimer>();
         //scoreTracker = new ScoreTracker();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        foreach(var obj in GameObject.FindObjectsOfType<AudioSource>())
-        {
-            if (obj.gameObject.layer == cameraRig.gameObject.layer)
-            {
-                obj.mute = false;
-            }
-            else
-            {
-                obj.mute = true;
-            }
-        }
+        
 
         LaptopsFailedDisplay.text = scoreTracker.currentScore.laptopsFailed.ToString("000");
         LaptopsFixedDisplay.text = scoreTracker.currentScore.laptopsFixed.ToString("000");
-        float timeOutOf500 = (mainDimension.GetComponent<DimensionTimer>().elapsedTime / mainDimension.GetComponent<DimensionTimer>().maxTime) * 500.0f;
+        float timeOutOf500 = (mainDimensionTimer.elapsedTime / mainDimensionTimer.maxTime) * 500.0f;
         timerDisplay.Hours = ((int)(timeOutOf500 + 1000)) / 100;
         timerDisplay.Minutes = (int)((((timeOutOf500) % 100) / 99) * 59);
 
-        if (mainDimension.GetComponent<DimensionTimer>().timeOver)
+        if (mainDimensionTimer.timeOver)
         {
             //scoreTracker.saveData();
             SceneManager.LoadScene(2);
@@ -223,12 +216,22 @@ public class GameManager : MonoBehaviour {
         portal.dimensionChanging.Add(cameraRig);
         portal.dimensionChanging.Add(laptop);
 
-
-        //Light[] lights = FindObjectsOfType<Light>();
-        //foreach (Light l in lights)
-        //{
-        //    l.enabled = l.gameObject.layer == cameraRig.layer;
-        //}
+        foreach (var aud in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            if (aud.gameObject.layer == GameManager.Instance.cameraRig.gameObject.layer)
+            {
+                aud.mute = false;
+            }
+            else
+            {
+                aud.mute = true;
+            }
+        }
+        Light[] lights = FindObjectsOfType<Light>();
+        foreach (Light l in lights)
+        {
+            l.enabled = l.gameObject.layer == cameraRig.layer;
+        }
 
         AudioSource[] sounds = FindObjectsOfType<AudioSource>();
         foreach (AudioSource s in sounds)

@@ -15,57 +15,57 @@ public class Display7Seg : MonoBehaviour {
 	public bool gFlag = false;
 	public bool pFlag = false;
 
-	private GameObject a = null;
-	private GameObject b = null;
-	private GameObject c = null;
-	private GameObject d = null;
-	private GameObject e = null;
-	private GameObject f = null;
-	private GameObject g = null;
-	private GameObject p = null;
+	private Material a = null;
+	private Material b = null;
+	private Material c = null;
+	private Material d = null;
+	private Material e = null;
+	private Material f = null;
+	private Material g = null;
+	private Material p = null;
 
 	void Start()
 	{
-		a = transform.FindChild("a").gameObject;
-		b = transform.FindChild("b").gameObject;
-		c = transform.FindChild("c").gameObject;
-		d = transform.FindChild("d").gameObject;
-		e = transform.FindChild("e").gameObject;
-		f = transform.FindChild("f").gameObject;
-		g = transform.FindChild("g").gameObject;
-		p = transform.FindChild("p").gameObject;		
+		a = transform.FindChild("a").gameObject.GetComponent<Renderer>().material;
+		b = transform.FindChild("b").gameObject.GetComponent<Renderer>().material;
+		c = transform.FindChild("c").gameObject.GetComponent<Renderer>().material;
+		d = transform.FindChild("d").gameObject.GetComponent<Renderer>().material;
+		e = transform.FindChild("e").gameObject.GetComponent<Renderer>().material;
+		f = transform.FindChild("f").gameObject.GetComponent<Renderer>().material;
+		g = transform.FindChild("g").gameObject.GetComponent<Renderer>().material;
+		p = transform.FindChild("p").gameObject.GetComponent<Renderer>().material;		
 	}
 
 	void Update()
 	{
-		UpdateDisplay ();
+		//UpdateDisplay ();
 	}
 
 	void UpdateDisplay ()
 	{
-		if(aFlag) a.GetComponent<Renderer>().material.color = onColor;
-		else a.GetComponent<Renderer>().material.color = offColor;
+		if(aFlag) a.color= onColor;
+		else a.color = offColor;
 
-		if(bFlag) b.GetComponent<Renderer>().material.color = onColor;
-		else b.GetComponent<Renderer>().material.color = offColor;
+		if(bFlag) b.color = onColor;
+		else b.color = offColor;
 
-		if(cFlag) c.GetComponent<Renderer>().material.color = onColor;
-		else c.GetComponent<Renderer>().material.color = offColor;
+		if(cFlag) c.color = onColor;
+		else c.color = offColor;
 
-		if(dFlag) d.GetComponent<Renderer>().material.color = onColor;
-		else d.GetComponent<Renderer>().material.color = offColor;
+		if(dFlag) d.color = onColor;
+		else d.color = offColor;
 
-		if(eFlag) e.GetComponent<Renderer>().material.color = onColor;
-		else e.GetComponent<Renderer>().material.color = offColor;
+		if(eFlag) e.color = onColor;
+		else e.color = offColor;
 
-		if(fFlag) f.GetComponent<Renderer>().material.color = onColor;
-		else f.GetComponent<Renderer>().material.color = offColor;
+		if(fFlag) f.color = onColor;
+		else f.color = offColor;
 
-		if(gFlag) g.GetComponent<Renderer>().material.color = onColor;
-		else g.GetComponent<Renderer>().material.color = offColor;
+		if(gFlag) g.color = onColor;
+		else g.color = offColor;
 
-		if(pFlag) p.GetComponent<Renderer>().material.color = onColor;
-		else p.GetComponent<Renderer>().material.color = offColor;
+		if(pFlag) p.color = onColor;
+		else p.color = offColor;
 	}
 
 	public void setChar(char ch, bool pointState = false)
