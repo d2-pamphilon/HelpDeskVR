@@ -109,9 +109,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        
-
         LaptopsFailedDisplay.text = scoreTracker.currentScore.laptopsFailed.ToString("000");
         LaptopsFixedDisplay.text = scoreTracker.currentScore.laptopsFixed.ToString("000");
         float timeOutOf500 = (mainDimensionTimer.elapsedTime / mainDimensionTimer.maxTime) * 500.0f;
@@ -197,6 +194,10 @@ public class GameManager : MonoBehaviour {
 
     public void SpawnLaptop(int index)
     {
+        if (LayerManager.instance.findFirstFreeLayer() == 0)
+        {
+            return;
+        }
         GameObject laptop = Instantiate(laptopsPrefabs[index].Laptop);
         DimensionChanger.SetLayerRecursively(laptop, mainDimension.layer);
         GameObject dim = Instantiate(laptopsPrefabs[index].Dimension);
@@ -216,17 +217,17 @@ public class GameManager : MonoBehaviour {
         portal.dimensionChanging.Add(cameraRig);
         portal.dimensionChanging.Add(laptop);
 
-        foreach (var aud in GameObject.FindObjectsOfType<AudioSource>())
-        {
-            if (aud.gameObject.layer == GameManager.Instance.cameraRig.gameObject.layer)
-            {
-                aud.mute = false;
-            }
-            else
-            {
-                aud.mute = true;
-            }
-        }
+        //foreach (var aud in GameObject.FindObjectsOfType<AudioSource>())
+        //{
+        //    if (aud.gameObject.layer == GameManager.Instance.cameraRig.gameObject.layer)
+        //    {
+        //        aud.mute = false;
+        //    }
+        //    else
+        //    {
+        //        aud.mute = true;
+        //    }
+        //}
         //Light[] lights = FindObjectsOfType<Light>();
         //foreach (Light l in lights)
         //{

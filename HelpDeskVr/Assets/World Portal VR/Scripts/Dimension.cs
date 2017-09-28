@@ -23,7 +23,7 @@ public class Dimension : MonoBehaviour {
 	void Awake() {
 		connectedPortals = new List<Portal> ();
 
-		layer = LayerManager.Instance ().CreateLayer (gameObject.name);	
+		layer = LayerManager.Instance ().CreateLayer (gameObject.name);
 		gameObject.layer = layer;
 
 		Transform[] childrenTransforms = gameObject.GetComponentsInChildren<Transform> ();

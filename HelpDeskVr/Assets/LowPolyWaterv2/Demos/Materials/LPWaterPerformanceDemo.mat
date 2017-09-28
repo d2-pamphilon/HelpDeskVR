@@ -210,4 +210,4 @@ Material:
       second: {r: -0, g: 0.4079326, b: -0.913012, a: 0}
     - first:
         name: _SunColor
-      second: {r: 1, g: 0, b: 0, a: 0}
+      second: {r: 0.49729672, g: 0.8888237, b: 0.9264706, a: 1}

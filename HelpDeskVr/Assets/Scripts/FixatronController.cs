@@ -127,6 +127,10 @@ public class FixatronController : MonoBehaviour {
         }
         currentUSBs.Remove(e.snappedObject);
         stopDownloadAndInstall();
+        if (HintsManager.Instance.hintState == (HintState.InsertedUSB))
+        {
+            HintsManager.Instance.removeHint();
+        }
     }
 
     // Update is called once per frame

@@ -100,7 +100,13 @@ public class Laptop : VRTK_InteractableObject
         {
             dimTimer.maxTime = 0.0f;
         }
+        if (HintsManager.Instance.hintState == (HintState.HoldingBadUsb) &&
+            e.snappedObject.gameObject.GetComponent<USBController>().isBad)
+        {
+            HintsManager.Instance.removeHint();
+        }
         Destroy(e.snappedObject.gameObject);
+        
         currentUSB = null;
     }
 
