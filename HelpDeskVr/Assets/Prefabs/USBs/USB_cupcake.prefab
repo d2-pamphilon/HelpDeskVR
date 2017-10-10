@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070605108426840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03335038, y: 0.7067668, z: -0.85125893}
+  m_LocalPosition: {x: 0.46325436, y: 0.70676756, z: -0.89352155}
   m_LocalScale: {x: 0.020000003, y: 0.02, z: 0.020000003}
   m_Children:
   - {fileID: 4245187616774812}
@@ -279,8 +279,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4723756, y: 1.8831173, z: 1.8605632}
-  m_Center: {x: -0.016003843, y: -0.072574615, z: 0.033035867}
+  m_Size: {x: 2.9317136, y: 2.4865124, z: 3.025264}
+  m_Center: {x: -0.2456724, y: -0.15342534, z: -0.018975135}
 --- !u!82 &82460842008914848
 AudioSource:
   m_ObjectHideFlags: 1
@@ -441,8 +441,8 @@ MonoBehaviour:
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 114478551793149092}
   secondaryGrabActionScript: {fileID: 0}
-  isUsable: 1
-  holdButtonToUse: 1
+  isUsable: 0
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0

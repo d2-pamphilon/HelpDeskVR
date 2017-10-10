@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696687894053192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07928848, y: 0.7067668, z: -0.9896887}
+  m_LocalPosition: {x: 0.22123653, y: 0.7067668, z: -0.9724587}
   m_LocalScale: {x: 0.020000003, y: 0.02, z: 0.020000003}
   m_Children:
   - {fileID: 4943354644283018}
@@ -279,8 +279,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5443373, y: 1.2468715, z: 1.1516868}
-  m_Center: {x: -1.0668272, y: 0.12343526, z: 0.015169378}
+  m_Size: {x: 5.111441, y: 1.7993569, z: 2.1123996}
+  m_Center: {x: -1.3503786, y: 0.18750131, z: 0.06205438}
 --- !u!82 &82673811085453602
 AudioSource:
   m_ObjectHideFlags: 1
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b412243d4d0e734b85b49f4b8889caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableWhenIdle: 1
+  disableWhenIdle: 0
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   allowedTouchControllers: 0
   isGrabbable: 1
@@ -413,8 +413,8 @@ MonoBehaviour:
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 114264885057019512}
   secondaryGrabActionScript: {fileID: 0}
-  isUsable: 1
-  holdButtonToUse: 1
+  isUsable: 0
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
