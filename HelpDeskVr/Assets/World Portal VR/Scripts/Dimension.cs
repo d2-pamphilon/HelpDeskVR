@@ -14,10 +14,10 @@ public class Dimension : MonoBehaviour {
 
 	public bool initialWorld = false;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public List<Portal> connectedPortals;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public Camera cam;
 
 	void Awake() {
@@ -65,10 +65,18 @@ public class Dimension : MonoBehaviour {
 
 	// You have just entered this dimension. All portals now point away from it.
 	public void SwitchConnectingPortals() {
-		foreach (Portal portal in connectedPortals) {
-			if (portal.ToDimension () == this) {
-				portal.SwitchPortalDimensions ();
-			}
+        foreach (Portal portal in connectedPortals) {
+            if (portal)
+            {
+                if (portal.ToDimension() == this)
+                {
+                    portal.SwitchPortalDimensions();
+                }
+            }
+            else
+            {
+
+            }
 		}
 	}
 }

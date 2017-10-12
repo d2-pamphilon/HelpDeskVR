@@ -325,6 +325,7 @@ public class Portal : MonoBehaviour
 
 	protected virtual void SwitchDimensions ()
 	{
+        Debug.Log("Going From: " + FromDimension().layer + " to " + ToDimension().layer);
         DimensionChanger.SwitchCameraRender (mainCamera, FromDimension ().layer, ToDimension ().layer, ToDimension ().customSkybox);
         DimensionChanger.SwitchDimensions (mainCamera.gameObject, FromDimension (), ToDimension ());
 		ToDimension ().SwitchConnectingPortals ();
@@ -333,7 +334,7 @@ public class Portal : MonoBehaviour
 	public void SwitchPortalDimensions ()
 	{
 		dimensionSwitched = !dimensionSwitched;
-		gameObject.layer = FromDimension ().layer;
+		gameObject.layer = FromDimension().layer;
 	}
 
 	/* Objects with colliders */

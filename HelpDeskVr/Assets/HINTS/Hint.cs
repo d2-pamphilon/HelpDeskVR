@@ -19,25 +19,28 @@ public class Hint : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(player.transform.position);
-        Vector3 NewPos = (attachedTo.transform.position + 
-                              ((player.transform.position - attachedTo.transform.position)/10));
-      
-        NewPos.y += 0.3f;
-
-        transform.position = NewPos;
-
-        LineBegin.transform.position = transform.position;
-        Vector3 center = attachedTo.transform.position;
-        int objs = 1;
-        foreach (Transform go in attachedTo.transform.GetComponentsInChildren<Transform>())
+        if (attachedTo)
         {
-            center += go.position;
-            objs++;
-        }
-        center /= objs;
+            transform.LookAt(player.transform.position);
+            Vector3 NewPos = (attachedTo.transform.position +
+                                  ((player.transform.position - attachedTo.transform.position) / 10));
 
-        LineEnd.transform.position = center;
-        LineMid.transform.position = (center + new Vector3(0.0f, 0.1f, 0.0f));
+            NewPos.y += 0.3f;
+
+            transform.position = NewPos;
+
+            LineBegin.transform.position = transform.position;
+            Vector3 center = attachedTo.transform.position;
+            int objs = 1;
+            foreach (Transform go in attachedTo.transform.GetComponentsInChildren<Transform>())
+            {
+                center += go.position;
+                objs++;
+            }
+            center /= objs;
+
+            LineEnd.transform.position = center;
+            LineMid.transform.position = (center + new Vector3(0.0f, 0.1f, 0.0f));
+        }
 	}
 }
