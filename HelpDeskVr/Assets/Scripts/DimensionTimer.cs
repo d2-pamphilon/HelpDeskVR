@@ -23,7 +23,21 @@ public class DimensionTimer : MonoBehaviour {
         {
             timeOver = true;
         }
-	}
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (GameManager.Instance.cameraRig.layer == this.gameObject.layer)
+            {
+                maxTime += 30;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (GameManager.Instance.cameraRig.layer == this.gameObject.layer)
+            {
+                maxTime -= 30;
+            }
+        }
+    }
 
     float getElapsedTime()
     {

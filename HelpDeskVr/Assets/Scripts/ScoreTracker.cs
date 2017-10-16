@@ -64,6 +64,14 @@ public class ScoreTracker : MonoBehaviour {
         currentScore = new Score();
     }
 
+    void Update()
+    {
+        if (Application.loadedLevel == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void SetName( string name)
     {
         currentScore.playerName = name;
